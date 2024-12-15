@@ -48,7 +48,7 @@ const About = () => {
           </p>
           <button
             onClick={handleResumeClick}
-            className="mt-6 text-white bg-gray-800/0 transition-all duration-300 ease-in-out border border-gray-800 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 py-2 px-4 rounded-md flex items-center"
+            className="mt-6 text-white bg-gray-800/0 transition-all duration-300 ease-in-out border border-gray-800 hover:bg-gray-800 py-2 px-4 rounded-md flex items-center"
           >
             View Resume{" "}
             <MdArrowOutward className="ml-2" size={20} color="white" />
