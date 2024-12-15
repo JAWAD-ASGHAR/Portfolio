@@ -1,11 +1,11 @@
 import React from "react";
 
 const links = [
-  { id: 1, href: "about", text: "About" },
-  { id: 2, href: "projects", text: "Projects" },
-  { id: 3, href: "skills", text: "Skills" },
-  { id: 4, href: "experience", text: "Experience" },
-  { id: 5, href: "contacts", text: "Contacts" },
+  { id: 1, href: "/about", text: "About" },
+  { id: 2, href: "/projects", text: "Projects" },
+  { id: 3, href: "/skills", text: "Skills" },
+  { id: 4, href: "/experience", text: "Experience" },
+  { id: 5, href: "/contact", text: "Contact" },
 ];
 
 const Home = () => {
