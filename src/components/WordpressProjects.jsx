@@ -49,8 +49,8 @@ const WordpressProjects = ({ backButton = true }) => {
         <div>
           <h2 className="text-5xl font-bold">WordPress Projects</h2>
           <p className="text-gray-400 mt-4 text-lg max-w-lg">
-            Discover some of my WordPress projects, from blogs to custom
-            e-commerce solutions.
+            Some of my WordPress projects, with happy clients and successful
+            launches.
           </p>
         </div>
         {backButton && <BackButton />}
