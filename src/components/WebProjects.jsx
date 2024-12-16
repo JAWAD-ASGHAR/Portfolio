@@ -21,28 +21,28 @@ const WebProjects = ({ backButton = true }) => {
 
   const projects = [
     {
-      title: "Otteri AI",
+      title: "Cloud Box",
       description:
         "An AI-powered Chrome extension plugin landing site with a clean and beautiful design to attract and convert customers.",
       tools: "WordPress, Elementor, Yoast SEO",
-      link: "https://otteri.ai/",
-      video: "/Otteri Wordpress Site.mp4",
+      link: "https://github.com/JAWAD-ASGHAR/Cloud-Box-Storage",
+      video: "/Cloud Box Project.mp4",
     },
     {
-      title: "Treply SO",
+      title: "Tik Talk",
       description:
         "An SMS marketing SaaS platform landing site with a clean design to effectively convey a clear message to customers.",
       tools: "WordPress, Gutenberg, Custom PHP",
-      link: "https://treply.so/",
-      video: "/Treply Wordpress Site.mp4",
+      link: "https://github.com/JAWAD-ASGHAR/Tik-Talk-Chat-App",
+      video: "/Tik Talk Project.mp4",
     },
     {
-      title: "Nuqsaf Banking",
+      title: "NPM Dummy Dump",
       description:
         "America's first online Islamic banking landing site, featuring a clean and modern design to showcase the platform's features.",
       tools: "WordPress, WooCommerce, Advanced Custom Fields",
-      link: "https://nuqsaf.com/",
-      video: "/Nuqsaf Wordpress Site.mp4",
+      link: "https://www.npmjs.com/package/dummy-dump",
+      video: "/Dummy Dump Npm.mp4",
     },
   ];
 

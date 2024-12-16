@@ -24,7 +24,6 @@ const WordpressProjects = ({ backButton = true }) => {
       title: "Otteri AI",
       description:
         "An AI-powered Chrome extension plugin landing site with a clean and beautiful design to attract and convert customers.",
-      tools: "WordPress, Elementor, Yoast SEO",
       link: "https://otteri.ai/",
       video: "/Otteri Wordpress Site.mp4",
     },
@@ -32,7 +31,6 @@ const WordpressProjects = ({ backButton = true }) => {
       title: "Treply SO",
       description:
         "An SMS marketing SaaS platform landing site with a clean design to effectively convey a clear message to customers.",
-      tools: "WordPress, Gutenberg, Custom PHP",
       link: "https://treply.so/",
       video: "/Treply Wordpress Site.mp4",
     },
@@ -40,7 +38,6 @@ const WordpressProjects = ({ backButton = true }) => {
       title: "Nuqsaf Banking",
       description:
         "America's first online Islamic banking landing site, featuring a clean and modern design to showcase the platform's features.",
-      tools: "WordPress, WooCommerce, Advanced Custom Fields",
       link: "https://nuqsaf.com/",
       video: "/Nuqsaf Wordpress Site.mp4",
     },
