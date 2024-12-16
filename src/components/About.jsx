@@ -2,6 +2,7 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import { MdArrowOutward } from "react-icons/md";
 import { useNavigate } from "react-router";
 import Skills from "./Skills";
+import BackButton from "./BackButton";
 
 const About = () => {
   const navigate = useNavigate();
@@ -54,12 +55,7 @@ const About = () => {
             <MdArrowOutward className="ml-2" size={20} color="white" />
           </button>
         </div>
-        <button
-          onClick={() => navigate("/")}
-          className="h-16 w-16 justify-center items-center rounded-full bg-gray-600 hover:bg-gray-700 transition-all duration-300 ease-in-out flex"
-        >
-          <IoArrowBackOutline size={30} color="white" />
-        </button>
+        <BackButton />
       </div>
       <div className="space-y-12">
         <div className="flex justify-between border-t border-gray-700 pt-16">

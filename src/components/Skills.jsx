@@ -4,6 +4,7 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import { MdArrowOutward, MdOutlineDesignServices } from "react-icons/md";
 import { useNavigate } from "react-router";
 import Tooltip from "./Tooltip";
+import BackButton from "./BackButton";
 
 const Skills = ({ backButton = true }) => {
     const navigate = useNavigate();
@@ -43,12 +44,7 @@ const Skills = ({ backButton = true }) => {
             </p>
           </div>
           {backButton === true && (
-            <button
-              onClick={() => navigate("/")}
-              className="h-16 w-16 justify-center items-center rounded-full bg-gray-600 hover:bg-gray-700 transition-all duration-300 ease-in-out flex"
-            >
-              <IoArrowBackOutline size={30} color="white" />
-            </button>
+            <BackButton/>
           )}
         </div>
         <div className="mt-12">
