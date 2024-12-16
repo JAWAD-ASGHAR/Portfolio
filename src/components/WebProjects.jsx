@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdArrowOutward, MdInfo } from "react-icons/md";
+import { MdArrowOutward, MdClose, MdInfo } from "react-icons/md";
 import { useNavigate } from "react-router";
 import Tooltip from "./Tooltip";
 import BackButton from "./BackButton";
@@ -76,7 +76,8 @@ const WebProjects = ({ backButton = true }) => {
   - User authentication and profile management
   - Cross-device responsive design
   - Efficient and smooth state management`,
-      tools: "React.js, Zustand, Tailwind CSS, ShadCN, Node.js, Socket.IO, MongoDB",
+      tools:
+        "React.js, Zustand, Tailwind CSS, ShadCN, Node.js, Socket.IO, MongoDB",
       link: "https://github.com/JAWAD-ASGHAR/Tik-Talk-Chat-App",
       video: "/Tik Talk Project.mp4",
     },
@@ -218,18 +219,26 @@ const WebProjects = ({ backButton = true }) => {
             className="relative w-[90%] md:w-[800px] max-h-[80vh] bg-mainGray rounded-lg overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-[#353535] p-4 flex justify-between items-center">
+            <div className="bg-mainGray border-b border-b-gray-800 p-4 flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">
                 {selectedProject.title}
               </h2>
-              <a
-                href={selectedProject.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
-              >
-                <MdArrowOutward />
-              </a>
+              <div className="flex gap-4">
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
+                >
+                  <MdArrowOutward />
+                </a>
+                <div
+                  onClick={closeDialogHandler}
+                  className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
+                >
+                  <MdClose />
+                </div>
+              </div>
             </div>
 
             <div className="p-6 overflow-y-auto">
