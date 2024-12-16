@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./components/Home";
 import Experience from "./components/Experience";
@@ -5,7 +6,6 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import React from "react";
 
 function App() {
   return (
