@@ -6,6 +6,9 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import WebProjects from "./components/WebProjects";
+import DesignProjects from "./components/DesignProjects";
+import WordpressProjects from "./components/WordpressProjects";
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
               </div>
             }
           />
+          <Route path="/projects/web" element={<WebProjects />} />
+          <Route path="/projects/design" element={<DesignProjects />} />
+          <Route path="/projects/wordpress" element={<WordpressProjects />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
