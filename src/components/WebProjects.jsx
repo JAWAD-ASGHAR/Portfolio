@@ -1,46 +1,112 @@
 import React, { useState } from "react";
-import { MdArrowOutward } from "react-icons/md";
+import { MdArrowOutward, MdInfo } from "react-icons/md";
 import { useNavigate } from "react-router";
 import Tooltip from "./Tooltip";
 import BackButton from "./BackButton";
 
 const WebProjects = ({ backButton = true }) => {
   const navigate = useNavigate();
-  const [openDialog, setOpenDialog] = useState(false);
+  const [openVideoDialog, setOpenVideoDialog] = useState(false);
+  const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const openDialogHandler = (project) => {
+  const openVideoDialogHandler = (project) => {
     setSelectedProject(project);
-    setOpenDialog(true);
+    setOpenVideoDialog(true);
   };
 
   const closeDialogHandler = () => {
-    setOpenDialog(false);
+    setOpenVideoDialog(false);
+    setOpenDetailsDialog(false);
     setSelectedProject(null);
+  };
+
+  const openDetailsDialogHandler = (project) => {
+    setSelectedProject(project);
+    setOpenDetailsDialog(true);
   };
 
   const projects = [
     {
       title: "Cloud Box",
       description:
-        "An AI-powered Chrome extension plugin landing site with a clean and beautiful design to attract and convert customers.",
-      tools: "WordPress, Elementor, Yoast SEO",
+        "A comprehensive full-stack cloud storage solution designed to provide users with a seamless, secure, and responsive file management experience.",
+      fullDescription: `Cloud Storage App represents a cutting-edge cloud storage platform built using modern web technologies. By leveraging Next.js, React, and cloud services like Supabase and Firebase, the application delivers a powerful solution for personal and professional file storage needs.
+  
+  Key Technological Highlights:
+  - Frontend Framework: Next.js and React for dynamic, high-performance application
+  - Authentication: Secure user login with NextAuth
+  - Database & Storage: Integrated Supabase and Firebase for real-time data sync
+  - Styling: Responsive design with Tailwind CSS and DaisyUI
+  - Date Handling: Precise management using Moment.js
+  
+  Core Functionalities:
+  - Secure user registration and authentication
+  - Intuitive file upload, download, and management
+  - Real-time data synchronization across devices
+  - Responsive design for desktop and mobile platforms`,
+      tools:
+        "Next.js, React, Supabase, Firebase, Moment.js, Tailwind CSS, DaisyUI",
       link: "https://github.com/JAWAD-ASGHAR/Cloud-Box-Storage",
       video: "/Cloud Box Project.mp4",
     },
     {
       title: "Tik Talk",
       description:
-        "An SMS marketing SaaS platform landing site with a clean design to effectively convey a clear message to customers.",
-      tools: "WordPress, Gutenberg, Custom PHP",
+        "A modern real-time communication platform showcasing advanced full-stack development and real-time messaging capabilities.",
+      fullDescription: `Tik Talk is a cutting-edge real-time chat application that demonstrates the power of modern web technologies in creating seamless communication experiences.
+  
+  Technical Architecture:
+  - Frontend: React.js with responsive UI
+  - State Management: Zustand for efficient state handling
+  - Styling: Tailwind CSS and ShadCN for adaptive design
+  - Backend: Node.js with robust API architecture
+  - Real-Time Communication: Socket.IO for instant messaging
+  - Database: MongoDB for scalable data storage
+  
+  Key Technical Highlights:
+  - Real-time, bidirectional communication with Socket.IO
+  - Responsive, mobile-friendly user interface
+  - Scalable backend development
+  - Elegant state management
+  - Secure and interactive communication platform
+  
+  Core Functionalities:
+  - Instant, real-time messaging
+  - User authentication and profile management
+  - Cross-device responsive design
+  - Efficient and smooth state management`,
+      tools: "React.js, Zustand, Tailwind CSS, ShadCN, Node.js, Socket.IO, MongoDB",
       link: "https://github.com/JAWAD-ASGHAR/Tik-Talk-Chat-App",
       video: "/Tik Talk Project.mp4",
     },
     {
       title: "NPM Dummy Dump",
       description:
-        "America's first online Islamic banking landing site, featuring a clean and modern design to showcase the platform's features.",
-      tools: "WordPress, WooCommerce, Advanced Custom Fields",
+        "A versatile Node.js utility package for generating comprehensive dummy data, streamlining development and testing processes.",
+      fullDescription: `Dummy Dump is a robust Node.js package developed to solve a critical challenge in software development and testing: the need for quick, realistic, and easily generated dummy data.
+  
+  Technical Overview:
+  - Core Technology: Node.js-based utility package
+  - Primary Purpose: Automated generation of realistic dummy data
+  - Key Features:
+    - Multiple data type generators (users, orders, products)
+    - Highly customizable and extensible
+    - Easy integration with existing Node.js projects
+  
+  Key Innovations:
+  - Flexible system generating complex, contextually appropriate dummy data
+  - Modular functions allowing granular or comprehensive data generation
+  - Robust data generation logic with multiple customization options
+  
+  Key Functionalities:
+  - Generate complete user profiles with realistic personal information
+  - Create mock order and product datasets
+  - Provide granular data generation methods
+  - Support rapid prototyping and testing scenarios
+  
+  The package demonstrates advanced JavaScript skills, understanding of data generation strategies, and the ability to create developer-friendly tools that solve real-world programming challenges.`,
+      tools: "Node.js, NPM Packaging",
       link: "https://www.npmjs.com/package/dummy-dump",
       video: "/Dummy Dump Npm.mp4",
     },
@@ -73,37 +139,47 @@ const WebProjects = ({ backButton = true }) => {
                 autoPlay
                 src={project.video}
                 type="video/mp4"
-                onClick={() => openDialogHandler(project)}
+                onClick={() => openVideoDialogHandler(project)}
               />
-              <div className="mb-4 w-full mt-4 flex justify-between">
+              <div className="mb-4 w-full mt-4 flex justify-between items-center">
                 <h3 className="text-xl font-semibold my-1">{project.title}</h3>
-                <Tooltip text="View Project" position="top">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
-                  >
-                    <MdArrowOutward />
-                  </a>
-                </Tooltip>
+                <div className="flex items-center space-x-2">
+                  <Tooltip text="View Details" position="top">
+                    <button
+                      onClick={() => openDetailsDialogHandler(project)}
+                      className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
+                    >
+                      <MdInfo />
+                    </button>
+                  </Tooltip>
+                  <Tooltip text="View Project" position="top">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
+                    >
+                      <MdArrowOutward />
+                    </a>
+                  </Tooltip>
+                </div>
               </div>
               <p className="text-gray-400 text-sm">{project.description}</p>
             </div>
           ))}
         </div>
       </div>
-      {openDialog && selectedProject && (
+
+      {/* Video Dialog */}
+      {openVideoDialog && selectedProject && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
           onClick={closeDialogHandler}
         >
-          {/* Overlay Content */}
           <div
             className="relative w-[90%] md:w-[600px] rounded-lg overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
             <button
               onClick={closeDialogHandler}
               className="absolute top-3 right-3 text-white text-2xl hover:text-gray-400 transition-all z-10"
@@ -111,7 +187,6 @@ const WebProjects = ({ backButton = true }) => {
               &times;
             </button>
 
-            {/* Video with Gradient Background */}
             <div
               className="w-full h-auto flex items-center justify-center"
               style={{
@@ -132,89 +207,63 @@ const WebProjects = ({ backButton = true }) => {
           </div>
         </div>
       )}
+
+      {/* Details Dialog */}
+      {openDetailsDialog && selectedProject && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={closeDialogHandler}
+        >
+          <div
+            className="relative w-[90%] md:w-[800px] max-h-[80vh] bg-mainGray rounded-lg overflow-hidden flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="bg-[#353535] p-4 flex justify-between items-center">
+              <h2 className="text-2xl font-bold text-white">
+                {selectedProject.title}
+              </h2>
+              <a
+                href={selectedProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
+              >
+                <MdArrowOutward />
+              </a>
+            </div>
+
+            <div className="p-6 overflow-y-auto">
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold mb-2">Project Overview</h3>
+                <p className="text-gray-300">{selectedProject.description}</p>
+              </div>
+
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold mb-2">
+                  Technical Details
+                </h3>
+                <div className="bg-black/20 p-4 rounded-lg text-gray-300 whitespace-pre-wrap">
+                  {selectedProject.fullDescription
+                    .split("\n\n")
+                    .map((paragraph, index) => (
+                      <p key={index} className="mb-2">
+                        {paragraph}
+                      </p>
+                    ))}
+                </div>
+              </div>
+
+              <div className="mt-4 flex justify-start items-center">
+                <span className="text-sm text-gray-400">
+                  Tools: {selectedProject.tools}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default WebProjects;
-
-// import { IoArrowBackOutline } from "react-icons/io5";
-// import { MdArrowOutward } from "react-icons/md";
-// import { useNavigate } from "react-router";
-// import Tooltip from "./Tooltip";
-// import BackButton from "./BackButton";
-
-// const WebProjects = ({ backButton = true }) => {
-//   const navigate = useNavigate();
-
-//   const projects = [
-//     {
-//       title: "Portfolio Website",
-//       description:
-//         "A personal portfolio website showcasing projects, blogs, and resume using React.js and Tailwind CSS.",
-//       techStack: "React.js, Tailwind CSS, Vercel",
-//       link: "https://portfolio.example.com",
-//     },
-//     {
-//       title: "E-commerce Store",
-//       description:
-//         "A fully functional e-commerce website with product filtering, cart, and payment integrations.",
-//       techStack: "Next.js, Stripe, Node.js",
-//       link: "https://store.example.com",
-//     },
-//     {
-//       title: "Admin Dashboard",
-//       description:
-//         "A sleek admin dashboard with user management, analytics, and responsive design.",
-//       techStack: "React.js, Material UI, Redux",
-//       link: "https://dashboard.example.com",
-//     },
-//   ];
-
-//   return (
-//     <div className="min-h-screen bg-black text-white px-8 py-16 md:px-32">
-//       <div className="flex justify-between">
-//         <div>
-//           <h2 className="text-5xl font-bold">Web Projects</h2>
-//           <p className="text-gray-400 mt-4 text-lg max-w-lg">
-//             Explore some of my featured web development projects, where I
-//             brought ideas to life with code and creativity.
-//           </p>
-//         </div>
-//         {backButton === true && (
-//           <BackButton/>
-//         )}
-//       </div>
-//       <div className="mt-12">
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-//           {projects.map((project, index) => (
-//             <div
-//               key={index}
-//               className="bg-mainGray p-6 rounded-lg flex flex-col items-start"
-//             >
-//               <div className="mb-4 w-full flex justify-between">
-//                 <div className="text-xl font-bold">{project.techStack}</div>
-//                 <Tooltip text="View Project" position="top">
-//                   <a
-//                     href={project.link}
-//                     target="_blank"
-//                     rel="noopener noreferrer"
-//                     className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
-//                   >
-//                     <MdArrowOutward />
-//                   </a>
-//                 </Tooltip>
-//               </div>
-
-//               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-
-//               <p className="text-gray-400 text-sm">{project.description}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default WebProjects;
