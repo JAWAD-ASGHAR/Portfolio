@@ -1,10 +1,11 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
   "compilerOptions": {
-    "noImplicitAny": false
-}
+    "composite": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "jsx": "react", // or "react-jsx" for React 17+
+    "strict": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
