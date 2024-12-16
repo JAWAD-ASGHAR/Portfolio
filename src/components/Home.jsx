@@ -56,11 +56,11 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="fixed top-12 right-12">
+      <div className="fixed top-20 right-12">
         <ul className="flex flex-col gap-1">
           {pages.map((link) => (
             <li
-              className="hover:cursor-pointer hover:opacity-80 hover:translate-x-1 duration-300 transition-all ease-in-out"
+              className="hover:cursor-pointer text-lg hover:opacity-80 hover:translate-x-1 duration-300 transition-all ease-in-out"
               key={link.id}
             >
               <a href={link.href}>{link.text}</a>
