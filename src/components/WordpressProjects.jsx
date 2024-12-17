@@ -25,21 +25,21 @@ const WordpressProjects = ({ backButton = true }) => {
       description:
         "An AI-powered Chrome extension plugin landing site with a clean and beautiful design to attract and convert customers.",
       link: "https://otteri.ai/",
-      video: "/Otteri Wordpress Site.mp4",
+      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Otteri%20Wordpress%20Site.mp4",
     },
     {
       title: "Treply SO",
       description:
         "An SMS marketing SaaS platform landing site with a clean design to effectively convey a clear message to customers.",
       link: "https://treply.so/",
-      video: "/Treply Wordpress Site.mp4",
+      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Treply%20Wordpress%20Site.mp4",
     },
     {
       title: "Nuqsaf Banking",
       description:
         "America's first online Islamic banking landing site, featuring a clean and modern design to showcase the platform's features.",
       link: "https://nuqsaf.com/",
-      video: "/Nuqsaf Wordpress Site.mp4",
+      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Nuqsaf%20Wordpress%20Site.mp4",
     },
   ];
 

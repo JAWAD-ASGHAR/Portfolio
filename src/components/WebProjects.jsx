@@ -48,7 +48,7 @@ const WebProjects = ({ backButton = true }) => {
       tools:
         "Next.js, React, Supabase, Firebase, Moment.js, Tailwind CSS, DaisyUI",
       link: "https://github.com/JAWAD-ASGHAR/Cloud-Box-Storage",
-      video: "/Cloud Box Project.mp4",
+      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Cloud%20Box%20Project.mp4?t=2024-12-17T12%3A01%3A04.647Z",
     },
     {
       title: "Tik Talk",
@@ -79,7 +79,7 @@ const WebProjects = ({ backButton = true }) => {
       tools:
         "React.js, Zustand, Tailwind CSS, ShadCN, Node.js, Socket.IO, MongoDB",
       link: "https://github.com/JAWAD-ASGHAR/Tik-Talk-Chat-App",
-      video: "/Tik Talk Project.mp4",
+      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Tik%20Talk%20Project.mp4",
     },
     {
       title: "NPM Dummy Dump",
@@ -109,7 +109,7 @@ const WebProjects = ({ backButton = true }) => {
   The package demonstrates advanced JavaScript skills, understanding of data generation strategies, and the ability to create developer-friendly tools that solve real-world programming challenges.`,
       tools: "Node.js, NPM Packaging",
       link: "https://www.npmjs.com/package/dummy-dump",
-      video: "/Dummy Dump Npm.mp4",
+      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Dummy%20Dump%20Npm.mp4",
     },
   ];
 
