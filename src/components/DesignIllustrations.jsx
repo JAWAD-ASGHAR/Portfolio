@@ -17,38 +17,43 @@ const DesignIllustrations = ({ backButton = true }) => {
 
   const projects = [
     {
-      image: "/titus logo final.png",
+      image: "/Card design.png",
     },
     {
-      image: "/Nexobe Logo.png",
+      image: "/about us groewpng.png",
     },
     {
-      image: "/titus logo orange.png",
+      image: "/Card Stack.png",
     },
     {
-      image: "/Otteri Logo.png",
+      image: "/Communication.png",
     },
     {
-      image: "/titus logo T.png",
-    },
-
-    {
-      image: "/Beel Logo.png",
+      image: "/e-commerce.png",
     },
     {
-      image: "/Snap Photo Logo.png",
+      image: "/Card section.png",
     },
     {
-      image: "/Bee Logo.png",
+      image: "/Dash Card.png",
     },
     {
-      image: "/Nuqsaf Logo.png",
+      image: "/Keywords.png",
     },
     {
-      image: "/Treply Logo.png",
+      image: "/Notifications.png",
     },
     {
-      image: "/Zengrow Logo.png",
+      image: "/Our Platform.png",
+    },
+    {
+      image: "/Our Story.png",
+    },
+    {
+      image: "/Shedules.png",
+    },
+    {
+      image: "/Purple Mobile.png",
     },
   ];
 
@@ -59,8 +64,8 @@ const DesignIllustrations = ({ backButton = true }) => {
           <div>
             <h2 className="text-5xl font-bold">Illustrations</h2>
             <p className="text-gray-400 mt-4 text-lg max-w-lg">
-              Creative illustrations that bring concepts to life through artistic
-              expression and visual storytelling.
+              Creative illustrations that bring concepts to life through
+              artistic expression and visual storytelling.
             </p>
           </div>
           {backButton === true && <BackButton />}
@@ -117,6 +122,5 @@ const DesignIllustrations = ({ backButton = true }) => {
     </>
   );
 };
-
 
 export default DesignIllustrations;
