@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { MdArrowOutward } from "react-icons/md";
@@ -41,6 +41,21 @@ const handleResumeClick = () => {
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // Close menu if clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -80,16 +95,27 @@ const Home = () => {
 
       {/* Menu Items */}
       <div
+        ref={menuRef}
         className={`fixed top-0 right-0 h-screen bg-gray-900/95 w-2/3 z-50 transform transition-transform ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
       >
+        <div className="flex justify-between items-center p-4">
+          <h2 className="text-white text-xl">Menu</h2>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="text-white hover:opacity-80 transition-all duration-300 ease-in-out"
+          >
+            <IoClose size={30} />
+          </button>
+        </div>
         <ul className="flex flex-col items-center justify-center h-full gap-6">
           {pages.map((link) => (
             <li key={link.id}>
               <a
                 href={link.href}
                 className="text-white text-xl hover:opacity-80 transition-all"
+                onClick={() => setMenuOpen(false)} // Close menu on link click
               >
                 {link.text}
               </a>
