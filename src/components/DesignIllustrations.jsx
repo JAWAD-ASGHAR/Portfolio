@@ -17,43 +17,43 @@ const DesignIllustrations = ({ backButton = true }) => {
 
   const projects = [
     {
-      image: "/Card design.png",
+      image: "/Card design.webp",
     },
     {
-      image: "/about us groewpng.png",
+      image: "/about us groewpng.webp",
     },
     {
-      image: "/Card Stack.png",
+      image: "/Card Stack.webp",
     },
     {
-      image: "/Communication.png",
+      image: "/Communication.webp",
     },
     {
-      image: "/e-commerce.png",
+      image: "/e-commerce.webp",
     },
     {
-      image: "/Card section.png",
+      image: "/Card section.webp",
     },
     {
-      image: "/Dash Card.png",
+      image: "/Dash Card.webp",
     },
     {
-      image: "/Keywords.png",
+      image: "/Keywords.webp",
     },
     {
-      image: "/Notifications.png",
+      image: "/Notifications.webp",
     },
     {
-      image: "/Our Platform.png",
+      image: "/Our Platform.webp",
     },
     {
-      image: "/Our Story.png",
+      image: "/Our Story.webp",
     },
     {
-      image: "/Shedules.png",
+      image: "/Shedules.webp",
     },
     {
-      image: "/Purple Mobile.png",
+      image: "/Purple Mobile.webp",
     },
   ];
 

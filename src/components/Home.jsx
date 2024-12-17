@@ -46,7 +46,7 @@ const Home = () => {
     <>
       <div
         className="h-screen w-screen bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/developer.png')" }}
+        style={{ backgroundImage: "url('/developer.webp')" }}
       >
         <div className="pt-16 flex flex-col items-center">
           <h2 className="text-aliceblue text-2xl font-normal">Jawad Asghar</h2>

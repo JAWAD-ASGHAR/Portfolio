@@ -18,25 +18,25 @@ const DesignUI = ({ backButton = true }) => {
 
   const projects = [
     {
-      image: "/Fitness White.png",
+      image: "/Fitness White.webp",
     },
     {
-      image: "/Beel UI.png",
+      image: "/Beel UI.webp",
     },
     {
-      image: "/Nuqsaf Dash.png",
+      image: "/Nuqsaf Dash.webp",
     },
     {
-      image: "/Otteri Dash.png",
+      image: "/Otteri Dash.webp",
     },
     {
-      image: "/Otteri Ext Dash.png",
+      image: "/Otteri Ext Dash.webp",
     },
     {
-      image: "/Treply Campaignn Page.png",
+      image: "/Treply Campaignn Page.webp",
     },
     {
-      image: "/Email Template.png",
+      image: "/Email Template.webp",
     },
   ];
 

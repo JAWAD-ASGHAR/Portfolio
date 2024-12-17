@@ -17,38 +17,38 @@ const DesignLogos = ({ backButton = true }) => {
 
   const projects = [
     {
-      image: "/titus logo final.png",
+      image: "/titus logo final.webp",
     },
     {
-      image: "/Nexobe Logo.png",
+      image: "/Nexobe Logo.webp",
     },
     {
-      image: "/titus logo orange.png",
+      image: "/titus logo orange.webp",
     },
     {
-      image: "/Otteri Logo.png",
+      image: "/Otteri Logo.webp",
     },
     {
-      image: "/titus logo T.png",
+      image: "/titus logo T.webp",
     },
 
     {
-      image: "/Beel Logo.png",
+      image: "/Beel Logo.webp",
     },
     {
-      image: "/Snap Photo Logo.png",
+      image: "/Snap Photo Logo.webp",
     },
     {
-      image: "/Bee Logo.png",
+      image: "/Bee Logo.webp",
     },
     {
-      image: "/Nuqsaf Logo.png",
+      image: "/Nuqsaf Logo.webp",
     },
     {
-      image: "/Treply Logo.png",
+      image: "/Treply Logo.webp",
     },
     {
-      image: "/Zengrow Logo.png",
+      image: "/Zengrow Logo.webp",
     },
   ];
 
