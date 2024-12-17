@@ -9,6 +9,9 @@ import Projects from "./components/Projects";
 import WebProjects from "./components/WebProjects";
 import DesignProjects from "./components/DesignProjects";
 import WordpressProjects from "./components/WordpressProjects";
+import DesignLogos from "./components/DesignLogos";
+import DesignIllustrations from "./components/DesignIllustrations";
+import DesignUI from "./components/DesignUI";
 
 function App() {
   return (
@@ -39,6 +42,9 @@ function App() {
           <Route path="/projects/web" element={<WebProjects />} />
           <Route path="/projects/design" element={<DesignProjects />} />
           <Route path="/projects/wordpress" element={<WordpressProjects />} />
+          <Route path="/projects/design/logos" element={<DesignLogos />} />
+          <Route path="/projects/design/illustrations" element={<DesignIllustrations />} />
+          <Route path="/projects/design/ui" element={<DesignUI />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>

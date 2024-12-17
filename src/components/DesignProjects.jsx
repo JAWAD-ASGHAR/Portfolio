@@ -1,33 +1,34 @@
-import { IoArrowBackOutline } from "react-icons/io5";
-import { MdArrowOutward } from "react-icons/md";
+import { IoArrowForward } from "react-icons/io5";
 import { useNavigate } from "react-router";
-import Tooltip from "./Tooltip";
 import BackButton from "./BackButton";
+import { TbBrand4Chan } from "react-icons/tb";
+import { DiIllustrator } from "react-icons/di";
+import { BsWindowFullscreen } from "react-icons/bs";
 
 const DesignProjects = ({ backButton = true }) => {
   const navigate = useNavigate();
 
-  const projects = [
+  const project = [
     {
-      title: "Mobile App UI",
+      title: "Branding Logos",
       description:
-        "Designed a modern and user-friendly interface for a fitness tracking mobile app.",
-      tools: "Figma, Adobe XD",
-      link: "https://design.example.com/mobile-app",
+        "A collection of branding logos designed to elevate brand identity and capture audience attention.",
+      icon: <TbBrand4Chan size={30} />,
+      link: "/projects/design/logos",
     },
     {
-      title: "Landing Page Design",
+      title: "Illustrations",
       description:
-        "Created a sleek and responsive landing page design for a SaaS product.",
-      tools: "Sketch, Figma",
-      link: "https://design.example.com/landing-page",
+        "Creative illustrations that bring concepts to life through artistic expression and visual storytelling.",
+      icon: <DiIllustrator size={30} />,
+      link: "/projects/design/illustrations",
     },
     {
-      title: "E-commerce UX Redesign",
+      title: "UI Design",
       description:
-        "Revamped the user experience of an e-commerce website, improving navigation and user flow.",
-      tools: "Figma, InVision",
-      link: "https://design.example.com/ecommerce-ux",
+        "Innovative UI designs focused on enhancing user experience and creating intuitive digital interfaces.",
+      icon: <BsWindowFullscreen size={30} />,
+      link: "/projects/design/ui",
     },
   ];
 
@@ -41,34 +42,24 @@ const DesignProjects = ({ backButton = true }) => {
             and usability across various platforms.
           </p>
         </div>
-        {backButton === true && (
-          <BackButton />
-        )}
+        {backButton === true && <BackButton />}
       </div>
       <div className="mt-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {project.map((option, index) => (
             <div
               key={index}
-              className="bg-mainGray p-6 rounded-lg flex flex-col items-start"
+              onClick={() => navigate(option.link)}
+              className="hover:cursor-pointer hover:bg-mainGray/80 transition-all duration-300 ease-in-out bg-mainGray p-6 rounded-lg flex flex-col items-start"
             >
               <div className="mb-4 w-full flex justify-between">
-                <div className="text-xl font-bold">{project.tools}</div>
-                <Tooltip text="View Project" position="top">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
-                  >
-                    <MdArrowOutward />
-                  </a>
-                </Tooltip>
+                <div>{option.icon}</div>
+                <IoArrowForward />
               </div>
 
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+              <h3 className="text-xl font-semibold mb-2">{option.title}</h3>
 
-              <p className="text-gray-400 text-sm">{project.description}</p>
+              <p className="text-gray-400 text-sm">{option.description}</p>
             </div>
           ))}
         </div>
