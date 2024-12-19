@@ -24,13 +24,16 @@ const DesignUI = ({ backButton = true }) => {
       image: "/Beel UI.webp",
     },
     {
-      image: "/Nuqsaf Dash.webp",
+      image: "/AI Answer.webp",
     },
     {
       image: "/Otteri Dash.webp",
     },
     {
       image: "/Otteri Ext Dash.webp",
+    },
+    {
+      image: "/Nuqsaf Dash.webp",
     },
     {
       image: "/Treply Campaignn Page.webp",
