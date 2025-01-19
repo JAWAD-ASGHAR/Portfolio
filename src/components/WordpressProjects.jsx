@@ -74,7 +74,7 @@ const WordpressProjects = ({ backButton = true }) => {
             >
               <div className="relative w-full h-auto">
                 {loadingStates[index] && (
-                  <div className="absolute inset-0 bg-gray-700 animate-pulse rounded-md aspect-w-16 aspect-h-9"></div>
+                  <div className="absolute inset-0 bg-gray-700 animate-pulse aspect-w-16 aspect-h-9"></div>
                 )}
                 <video
                   className={`w-full h-auto cursor-pointer ${
@@ -87,7 +87,8 @@ const WordpressProjects = ({ backButton = true }) => {
                   src={project.video}
                   type="video/mp4"
                   onClick={() => openDialogHandler(project)}
-                  onLoadedData={() => handleVideoLoaded(index)}
+                  onCanPlayThrough={() => handleVideoLoaded(index)}
+                  // onLoadedData={() => handleVideoLoaded(index)}
                 />
               </div>
               <div className="mb-4 w-full mt-4 flex justify-between">

@@ -146,10 +146,10 @@ const WebProjects = ({ backButton = true }) => {
             >
               <div className="relative w-full h-auto">
                 {loadingStates[index] && (
-                  <div className="absolute inset-0 bg-gray-700 animate-pulse rounded-md aspect-w-16 aspect-h-9"></div>
+                  <div className="absolute inset-0 bg-gray-700 animate-pulse aspect-w-16 aspect-h-9"></div>
                 )}
                 <video
-                  className={`w-full h-auto rounded-md cursor-pointer ${
+                  className={`w-full h-auto cursor-pointer ${
                     loadingStates[index] ? "opacity-0" : "opacity-100"
                   } transition-opacity duration-500`}
                   playsInline
@@ -159,11 +159,12 @@ const WebProjects = ({ backButton = true }) => {
                   src={project.video}
                   type="video/mp4"
                   onClick={() => openVideoDialogHandler(project)}
-                  onLoadedData={() => handleVideoLoaded(index)}
+                  // onLoadedData={() => handleVideoLoaded(index)}
+                  onCanPlayThrough={() => handleVideoLoaded(index)}
                 />
               </div>
 
-              <div className="mb-4 w-full mt-4 flex justify-between items-center">
+              <div className="mb-4 w-full mt-4 flex justify-between">
                 <h3 className="text-xl font-semibold my-1">{project.title}</h3>
                 <div className="flex items-center space-x-2">
                   <Tooltip text="View Details" position="top">
