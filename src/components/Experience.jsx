@@ -40,7 +40,7 @@ const Experience = () => {
             into accomplishments, making things happen.
           </p>
         </div>
-        <BackButton />
+        <BackButton onClick={() => navigate('/')} />
       </div>
 
       {/* Experience List */}

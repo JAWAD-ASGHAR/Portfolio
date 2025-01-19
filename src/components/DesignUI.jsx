@@ -1,10 +1,12 @@
 import { useState } from "react";
 import BackButton from "./BackButton";
+import { useNavigate } from "react-router";
 
 const DesignUI = ({ backButton = true }) => {
 
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate()
 
   const openDialogHandler = (project) => {
     setSelectedProject(project);
@@ -54,7 +56,7 @@ const DesignUI = ({ backButton = true }) => {
               showcasing my skills in creating clean and modern interfaces.
             </p>
           </div>
-          {backButton === true && <BackButton />}
+          {backButton === true && <BackButton onClick={() => navigate('/projects/design')} />}
         </div>
 
         <div className="columns-1 mt-12 sm:columns-2 lg:columns-3 gap-4">

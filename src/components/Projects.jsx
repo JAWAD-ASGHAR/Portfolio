@@ -1,9 +1,8 @@
 import { CiGlobe } from "react-icons/ci";
 import { FaWordpressSimple } from "react-icons/fa";
-import { IoArrowBackOutline, IoArrowForward } from "react-icons/io5";
+import { IoArrowForward } from "react-icons/io5";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { useNavigate } from "react-router";
-import Tooltip from "./Tooltip";
 import BackButton from "./BackButton";
 
 const Projects = ({ backButton = true }) => {
@@ -44,7 +43,7 @@ const Projects = ({ backButton = true }) => {
           </p>
         </div>
         {backButton === true && (
-          <BackButton/>
+          <BackButton onClick={() => navigate('/')}/>
         )}
       </div>
       <div className="mt-12">

@@ -18,7 +18,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <BackButton />
+        <BackButton onClick={() => navigate('/')} />
       </div>
 
       <div className="space-y-12">

@@ -44,7 +44,7 @@ const Skills = ({ backButton = true }) => {
             </p>
           </div>
           {backButton === true && (
-            <BackButton/>
+            <BackButton onClick={() => navigate('/')}/>
           )}
         </div>
         <div className="mt-12">

@@ -55,7 +55,7 @@ const About = () => {
             <MdArrowOutward className="ml-2" size={20} color="white" />
           </button>
         </div>
-        <BackButton />
+        <BackButton onClick={() => navigate('/')}/>
       </div>
       <div className="space-y-12">
         <div className="flex justify-between border-t border-gray-700 pt-16">
