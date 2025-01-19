@@ -8,6 +8,7 @@ const WordpressProjects = ({ backButton = true }) => {
   const navigate = useNavigate();
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [loadingStates, setLoadingStates] = useState([true, true, true]);
 
   const openDialogHandler = (project) => {
     setSelectedProject(project);
@@ -19,27 +20,36 @@ const WordpressProjects = ({ backButton = true }) => {
     setSelectedProject(null);
   };
 
+  const handleVideoLoaded = (index) => {
+    const updatedStates = [...loadingStates];
+    updatedStates[index] = false;
+    setLoadingStates(updatedStates);
+  };
+
   const projects = [
     {
       title: "Otteri AI",
       description:
         "An AI-powered Chrome extension plugin landing site with a clean and beautiful design to attract and convert customers.",
       link: "https://otteri.ai/",
-      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Otteri%20Wordpress%20Site.mp4",
+      video:
+        "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Otteri%20Wordpress%20Site.mp4",
     },
     {
       title: "Treply SO",
       description:
         "An SMS marketing SaaS platform landing site with a clean design to effectively convey a clear message to customers.",
       link: "https://treply.so/",
-      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Treply%20Wordpress%20Site.mp4",
+      video:
+        "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Treply%20Wordpress%20Site.mp4",
     },
     {
       title: "Nuqsaf Banking",
       description:
         "America's first online Islamic banking landing site, featuring a clean and modern design to showcase the platform's features.",
       link: "https://nuqsaf.com/",
-      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Nuqsaf%20Wordpress%20Site.mp4",
+      video:
+        "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Nuqsaf%20Wordpress%20Site.mp4",
     },
   ];
 
@@ -53,7 +63,7 @@ const WordpressProjects = ({ backButton = true }) => {
             launches.
           </p>
         </div>
-        {backButton && <BackButton onClick={() => navigate('/projects')} />}
+        {backButton && <BackButton onClick={() => navigate("/projects")} />}
       </div>
       <div className="mt-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -62,16 +72,24 @@ const WordpressProjects = ({ backButton = true }) => {
               key={index}
               className="bg-mainGray p-6 rounded-lg flex flex-col items-start"
             >
-              <video
-                className="w-full h-auto cursor-pointer hover:opacity-80 transition-opacity"
-                playsInline
-                muted
-                loop
-                autoPlay
-                src={project.video}
-                type="video/mp4"
-                onClick={() => openDialogHandler(project)}
-              />
+              <div className="relative w-full h-auto">
+                {loadingStates[index] && (
+                  <div className="absolute inset-0 bg-gray-700 animate-pulse rounded-md aspect-w-16 aspect-h-9"></div>
+                )}
+                <video
+                  className={`w-full h-auto cursor-pointer ${
+                    loadingStates[index] ? "opacity-0" : "opacity-100"
+                  } transition-opacity duration-500`}
+                  playsInline
+                  muted
+                  loop
+                  autoPlay
+                  src={project.video}
+                  type="video/mp4"
+                  onClick={() => openDialogHandler(project)}
+                  onLoadedData={() => handleVideoLoaded(index)}
+                />
+              </div>
               <div className="mb-4 w-full mt-4 flex justify-between">
                 <h3 className="text-xl font-semibold my-1">{project.title}</h3>
                 <Tooltip text="View Project" position="top">
@@ -95,20 +113,16 @@ const WordpressProjects = ({ backButton = true }) => {
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
           onClick={closeDialogHandler}
         >
-          {/* Overlay Content */}
           <div
             className="relative w-[90%] md:w-[600px] rounded-lg overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
             <button
               onClick={closeDialogHandler}
               className="absolute top-3 right-3 text-white text-2xl hover:text-gray-400 transition-all z-10"
             >
               &times;
             </button>
-
-            {/* Video with Gradient Background */}
             <div
               className="w-full h-auto flex items-center justify-center"
               style={{

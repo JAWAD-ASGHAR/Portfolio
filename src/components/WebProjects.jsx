@@ -4,11 +4,104 @@ import { useNavigate } from "react-router";
 import Tooltip from "./Tooltip";
 import BackButton from "./BackButton";
 
+const projects = [
+  {
+    title: "Cloud Box",
+    description:
+      "A comprehensive full-stack cloud storage solution designed to provide users with a seamless, secure, and responsive file management experience.",
+    fullDescription: `Cloud Storage App represents a cutting-edge cloud storage platform built using modern web technologies. By leveraging Next.js, React, and cloud services like Supabase and Firebase, the application delivers a powerful solution for personal and professional file storage needs.
+
+Key Technological Highlights:
+- Frontend Framework: Next.js and React for dynamic, high-performance application
+- Authentication: Secure user login with NextAuth
+- Database & Storage: Integrated Supabase and Firebase for real-time data sync
+- Styling: Responsive design with Tailwind CSS and DaisyUI
+- Date Handling: Precise management using Moment.js
+
+Core Functionalities:
+- Secure user registration and authentication
+- Intuitive file upload, download, and management
+- Real-time data synchronization across devices
+- Responsive design for desktop and mobile platforms`,
+    tools:
+      "Next.js, React, Supabase, Firebase, Moment.js, Tailwind CSS, DaisyUI",
+    link: "https://github.com/JAWAD-ASGHAR/Cloud-Box-Storage",
+    video:
+      "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Cloud%20Box%20Project.mp4?t=2024-12-17T12%3A01%3A04.647Z",
+  },
+  {
+    title: "Tik Talk",
+    description:
+      "A modern real-time communication platform showcasing advanced full-stack development and real-time messaging capabilities.",
+    fullDescription: `Tik Talk is a cutting-edge real-time chat application that demonstrates the power of modern web technologies in creating seamless communication experiences.
+
+Technical Architecture:
+- Frontend: React.js with responsive UI
+- State Management: Zustand for efficient state handling
+- Styling: Tailwind CSS and ShadCN for adaptive design
+- Backend: Node.js with robust API architecture
+- Real-Time Communication: Socket.IO for instant messaging
+- Database: MongoDB for scalable data storage
+
+Key Technical Highlights:
+- Real-time, bidirectional communication with Socket.IO
+- Responsive, mobile-friendly user interface
+- Scalable backend development
+- Elegant state management
+- Secure and interactive communication platform
+
+Core Functionalities:
+- Instant, real-time messaging
+- User authentication and profile management
+- Cross-device responsive design
+- Efficient and smooth state management`,
+    tools:
+      "React.js, Zustand, Tailwind CSS, ShadCN, Node.js, Socket.IO, MongoDB",
+    link: "https://github.com/JAWAD-ASGHAR/Tik-Talk-Chat-App",
+    video:
+      "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Tik%20Talk%20Project.mp4",
+  },
+  {
+    title: "NPM Dummy Dump",
+    description:
+      "A versatile Node.js utility package for generating comprehensive dummy data, streamlining development and testing processes.",
+    fullDescription: `Dummy Dump is a robust Node.js package developed to solve a critical challenge in software development and testing: the need for quick, realistic, and easily generated dummy data.
+
+Technical Overview:
+- Core Technology: Node.js-based utility package
+- Primary Purpose: Automated generation of realistic dummy data
+- Key Features:
+  - Multiple data type generators (users, orders, products)
+  - Highly customizable and extensible
+  - Easy integration with existing Node.js projects
+
+Key Innovations:
+- Flexible system generating complex, contextually appropriate dummy data
+- Modular functions allowing granular or comprehensive data generation
+- Robust data generation logic with multiple customization options
+
+Key Functionalities:
+- Generate complete user profiles with realistic personal information
+- Create mock order and product datasets
+- Provide granular data generation methods
+- Support rapid prototyping and testing scenarios
+
+The package demonstrates advanced JavaScript skills, understanding of data generation strategies, and the ability to create developer-friendly tools that solve real-world programming challenges.`,
+    tools: "Node.js, NPM Packaging",
+    link: "https://www.npmjs.com/package/dummy-dump",
+    video:
+      "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Dummy%20Dump%20Npm.mp4",
+  },
+];
+
 const WebProjects = ({ backButton = true }) => {
   const navigate = useNavigate();
   const [openVideoDialog, setOpenVideoDialog] = useState(false);
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [loadingStates, setLoadingStates] = useState(
+    Array(projects.length).fill(true)
+  );
 
   const openVideoDialogHandler = (project) => {
     setSelectedProject(project);
@@ -26,92 +119,11 @@ const WebProjects = ({ backButton = true }) => {
     setOpenDetailsDialog(true);
   };
 
-  const projects = [
-    {
-      title: "Cloud Box",
-      description:
-        "A comprehensive full-stack cloud storage solution designed to provide users with a seamless, secure, and responsive file management experience.",
-      fullDescription: `Cloud Storage App represents a cutting-edge cloud storage platform built using modern web technologies. By leveraging Next.js, React, and cloud services like Supabase and Firebase, the application delivers a powerful solution for personal and professional file storage needs.
-  
-  Key Technological Highlights:
-  - Frontend Framework: Next.js and React for dynamic, high-performance application
-  - Authentication: Secure user login with NextAuth
-  - Database & Storage: Integrated Supabase and Firebase for real-time data sync
-  - Styling: Responsive design with Tailwind CSS and DaisyUI
-  - Date Handling: Precise management using Moment.js
-  
-  Core Functionalities:
-  - Secure user registration and authentication
-  - Intuitive file upload, download, and management
-  - Real-time data synchronization across devices
-  - Responsive design for desktop and mobile platforms`,
-      tools:
-        "Next.js, React, Supabase, Firebase, Moment.js, Tailwind CSS, DaisyUI",
-      link: "https://github.com/JAWAD-ASGHAR/Cloud-Box-Storage",
-      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Cloud%20Box%20Project.mp4?t=2024-12-17T12%3A01%3A04.647Z",
-    },
-    {
-      title: "Tik Talk",
-      description:
-        "A modern real-time communication platform showcasing advanced full-stack development and real-time messaging capabilities.",
-      fullDescription: `Tik Talk is a cutting-edge real-time chat application that demonstrates the power of modern web technologies in creating seamless communication experiences.
-  
-  Technical Architecture:
-  - Frontend: React.js with responsive UI
-  - State Management: Zustand for efficient state handling
-  - Styling: Tailwind CSS and ShadCN for adaptive design
-  - Backend: Node.js with robust API architecture
-  - Real-Time Communication: Socket.IO for instant messaging
-  - Database: MongoDB for scalable data storage
-  
-  Key Technical Highlights:
-  - Real-time, bidirectional communication with Socket.IO
-  - Responsive, mobile-friendly user interface
-  - Scalable backend development
-  - Elegant state management
-  - Secure and interactive communication platform
-  
-  Core Functionalities:
-  - Instant, real-time messaging
-  - User authentication and profile management
-  - Cross-device responsive design
-  - Efficient and smooth state management`,
-      tools:
-        "React.js, Zustand, Tailwind CSS, ShadCN, Node.js, Socket.IO, MongoDB",
-      link: "https://github.com/JAWAD-ASGHAR/Tik-Talk-Chat-App",
-      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Tik%20Talk%20Project.mp4",
-    },
-    {
-      title: "NPM Dummy Dump",
-      description:
-        "A versatile Node.js utility package for generating comprehensive dummy data, streamlining development and testing processes.",
-      fullDescription: `Dummy Dump is a robust Node.js package developed to solve a critical challenge in software development and testing: the need for quick, realistic, and easily generated dummy data.
-  
-  Technical Overview:
-  - Core Technology: Node.js-based utility package
-  - Primary Purpose: Automated generation of realistic dummy data
-  - Key Features:
-    - Multiple data type generators (users, orders, products)
-    - Highly customizable and extensible
-    - Easy integration with existing Node.js projects
-  
-  Key Innovations:
-  - Flexible system generating complex, contextually appropriate dummy data
-  - Modular functions allowing granular or comprehensive data generation
-  - Robust data generation logic with multiple customization options
-  
-  Key Functionalities:
-  - Generate complete user profiles with realistic personal information
-  - Create mock order and product datasets
-  - Provide granular data generation methods
-  - Support rapid prototyping and testing scenarios
-  
-  The package demonstrates advanced JavaScript skills, understanding of data generation strategies, and the ability to create developer-friendly tools that solve real-world programming challenges.`,
-      tools: "Node.js, NPM Packaging",
-      link: "https://www.npmjs.com/package/dummy-dump",
-      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Dummy%20Dump%20Npm.mp4",
-    },
-  ];
+  const handleVideoLoaded = (index) => {
+    const updatedStates = [...loadingStates];
+    updatedStates[index] = false;
+    setLoadingStates(updatedStates);
+  };
 
   return (
     <div className="min-h-screen bg-black text-white px-8 py-16 md:px-32">
@@ -123,7 +135,7 @@ const WebProjects = ({ backButton = true }) => {
             brought ideas to life with code and creativity.
           </p>
         </div>
-        {backButton && <BackButton onClick={() => navigate('/projects')} />}
+        {backButton && <BackButton onClick={() => navigate("/projects")} />}
       </div>
       <div className="mt-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -132,16 +144,25 @@ const WebProjects = ({ backButton = true }) => {
               key={index}
               className="bg-mainGray p-6 rounded-lg flex flex-col items-start"
             >
-              <video
-                className="w-full h-auto cursor-pointer hover:opacity-80 transition-opacity"
-                playsInline
-                muted
-                loop
-                autoPlay
-                src={project.video}
-                type="video/mp4"
-                onClick={() => openVideoDialogHandler(project)}
-              />
+              <div className="relative w-full h-auto">
+                {loadingStates[index] && (
+                  <div className="absolute inset-0 bg-gray-700 animate-pulse rounded-md aspect-w-16 aspect-h-9"></div>
+                )}
+                <video
+                  className={`w-full h-auto rounded-md cursor-pointer ${
+                    loadingStates[index] ? "opacity-0" : "opacity-100"
+                  } transition-opacity duration-500`}
+                  playsInline
+                  muted
+                  loop
+                  autoPlay
+                  src={project.video}
+                  type="video/mp4"
+                  onClick={() => openVideoDialogHandler(project)}
+                  onLoadedData={() => handleVideoLoaded(index)}
+                />
+              </div>
+
               <div className="mb-4 w-full mt-4 flex justify-between items-center">
                 <h3 className="text-xl font-semibold my-1">{project.title}</h3>
                 <div className="flex items-center space-x-2">
