@@ -1,12 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BackButton from "./BackButton";
 import { useNavigate } from "react-router";
 
 const DesignUI = ({ backButton = true }) => {
-
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const projects = [
+    { image: "/Fitness White.webp" },
+    { image: "/Beel UI.webp" },
+    { image: "/AI Answer.webp" },
+    { image: "/Otteri Dash.webp" },
+    { image: "/Otteri Ext Dash.webp" },
+    { image: "/Nuqsaf Dash.webp" },
+    { image: "/Treply Campaignn Page.webp" },
+    { image: "/Email Template.webp" },
+  ];
+
+  useEffect(() => {
+    const imagePromises = projects.map(
+      (project) =>
+        new Promise((resolve) => {
+          const img = new Image();
+          img.src = project.image;
+          img.onload = resolve;
+          img.onerror = resolve; // Resolve even if an image fails to load
+        })
+    );
+
+    Promise.all(imagePromises).then(() => setAllImagesLoaded(true));
+  }, [projects]);
 
   const openDialogHandler = (project) => {
     setSelectedProject(project);
@@ -17,33 +42,6 @@ const DesignUI = ({ backButton = true }) => {
     setOpenDialog(false);
     setSelectedProject(null);
   };
-
-  const projects = [
-    {
-      image: "/Fitness White.webp",
-    },
-    {
-      image: "/Beel UI.webp",
-    },
-    {
-      image: "/AI Answer.webp",
-    },
-    {
-      image: "/Otteri Dash.webp",
-    },
-    {
-      image: "/Otteri Ext Dash.webp",
-    },
-    {
-      image: "/Nuqsaf Dash.webp",
-    },
-    {
-      image: "/Treply Campaignn Page.webp",
-    },
-    {
-      image: "/Email Template.webp",
-    },
-  ];
 
   return (
     <>
@@ -56,27 +54,44 @@ const DesignUI = ({ backButton = true }) => {
               showcasing my skills in creating clean and modern interfaces.
             </p>
           </div>
-          {backButton === true && <BackButton onClick={() => navigate('/projects/design')} />}
+          {backButton === true && (
+            <BackButton onClick={() => navigate("/projects/design")} />
+          )}
         </div>
 
         <div className="columns-1 mt-12 sm:columns-2 lg:columns-3 gap-4">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="relative group mb-4 overflow-hidden rounded-lg shadow-lg break-inside-avoid"
-              style={{ pageBreakInside: "avoid" }} // Inline CSS to enhance layout control
-            >
-              <img
-                src={project.image}
-                alt={`Project ${index + 1}`}
-                className="w-full h-auto object-cover hover:opacity-80 transition-all duration-300 ease-out cursor-pointer" // Ensures images maintain their aspect ratio
-                onClick={() => openDialogHandler(project)}
-              />
+          {!allImagesLoaded ? (
+            // Skeleton loader
+            <div className="space-y-4">
+              {projects.map((_, index) => (
+                <div
+                  key={index}
+                  className="w-full h-48 bg-gray-800 animate-pulse rounded-lg"
+                ></div>
+              ))}
             </div>
-          ))}
+          ) : (
+            // Display images once loaded
+            projects.map((project, index) => (
+              <div
+                key={index}
+                className="relative hover:opacity-85 transition-all duration-300 ease-in-out group mb-4 overflow-hidden rounded-lg shadow-lg break-inside-avoid"
+                style={{ pageBreakInside: "avoid" }}
+              >
+                <img
+                  src={project.image}
+                  alt={`Project ${index + 1}`}
+                  className="w-full h-auto cursor-pointer object-cover hover:opacity-80 transition-opacity duration-700 ease-in-out opacity-0"
+                  style={{ animation: "fadeIn 0.7s forwards" }}
+                  onClick={() => openDialogHandler(project)}
+                />
+              </div>
+            ))
+          )}
         </div>
       </div>
 
+      {/* Modal for viewing selected image */}
       {openDialog && selectedProject && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
@@ -88,7 +103,7 @@ const DesignUI = ({ backButton = true }) => {
           >
             <button
               onClick={closeDialogHandler}
-              className="absolute top-3 right-3 text-black text-2xl hover:text-gray-400 transition-all z-10"
+              className="absolute top-3 right-3 text-gray-600 text-2xl hover:text-gray-400 transition-all z-10"
             >
               &times;
             </button>
@@ -102,11 +117,22 @@ const DesignUI = ({ backButton = true }) => {
               <img
                 className="w-full max-h-[80vh] h-auto object-contain"
                 src={selectedProject.image}
+                alt="Selected Project"
               />
             </div>
           </div>
         </div>
       )}
+
+      <style>
+        {`
+        @keyframes fadeIn {
+          to {
+            opacity: 1;
+          }
+        }
+      `}
+      </style>
     </>
   );
 };
