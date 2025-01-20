@@ -148,7 +148,6 @@ const WebProjects = ({ backButton = true }) => {
                 loop
                 autoPlay
                 poster={project.poster}
-                src={project.video}
                 type="video/mp4"
                 onClick={() => openVideoDialogHandler(project)}
               >

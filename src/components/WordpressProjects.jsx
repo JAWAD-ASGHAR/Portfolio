@@ -75,7 +75,6 @@ const WordpressProjects = ({ backButton = true }) => {
                 loop
                 autoPlay
                 poster={project.poster}
-                src={project.video}
                 type="video/mp4"
                 onClick={() => openDialogHandler(project)}
               >
@@ -132,7 +131,6 @@ const WordpressProjects = ({ backButton = true }) => {
                 muted
                 loop
                 autoPlay
-                src={selectedProject.video}
                 type="video/mp4"
               >
                 <source src={selectedProject.video}/>
