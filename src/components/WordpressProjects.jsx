@@ -26,7 +26,8 @@ const WordpressProjects = ({ backButton = true }) => {
         "An AI-powered Chrome extension plugin landing site with a clean and beautiful design to attract and convert customers.",
       link: "https://otteri.ai/",
       video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Otteri%20Wordpress%20Site.mp4",
-      poster: "/Poster Otteri Wordpress.png"
+      poster: "/Poster Otteri Wordpress.png",
+      localVideo: "/Otteri Wordpress Site.mp4"
     },
     {
       title: "Treply SO",
@@ -34,7 +35,8 @@ const WordpressProjects = ({ backButton = true }) => {
         "An SMS marketing SaaS platform landing site with a clean design to effectively convey a clear message to customers.",
       link: "https://treply.so/",
       video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Treply%20Wordpress%20Site.mp4",
-      poster: "/Poster Treply Wordpress.png"
+      poster: "/Poster Treply Wordpress.png",
+      localVideo: "/Treply Wordpress Site.mp4"
     },
     {
       title: "Nuqsaf Banking",
@@ -42,7 +44,8 @@ const WordpressProjects = ({ backButton = true }) => {
         "America's first online Islamic banking landing site, featuring a clean and modern design to showcase the platform's features.",
       link: "https://nuqsaf.com/",
       video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Nuqsaf%20Wordpress%20Site.mp4",
-      poster: "/Poster Nuqsaf Wordpress.png"
+      poster: "/Poster Nuqsaf Wordpress.png",
+      localVideo: "/Nuqsaf Wordpress Site.mp4"
     },
   ];
 
@@ -75,7 +78,10 @@ const WordpressProjects = ({ backButton = true }) => {
                 src={project.video}
                 type="video/mp4"
                 onClick={() => openDialogHandler(project)}
-              />
+              >
+                <source src={project.video}/>
+                <source src={project.localVideo}/>
+              </video>
               <div className="mb-4 w-full mt-4 flex justify-between">
                 <h3 className="text-xl font-semibold my-1">{project.title}</h3>
                 <Tooltip text="View Project" position="top">
@@ -119,7 +125,7 @@ const WordpressProjects = ({ backButton = true }) => {
                 background: "linear-gradient(90deg, #FF7A5C, #FF5CD9, #5372FF)",
               }}
             >
-              <video
+             <video
                 className="w-full h-auto"
                 playsInline
                 controls
@@ -128,7 +134,10 @@ const WordpressProjects = ({ backButton = true }) => {
                 autoPlay
                 src={selectedProject.video}
                 type="video/mp4"
-              />
+              >
+                <source src={selectedProject.video}/>
+                <source src={selectedProject.localVideo}/>
+              </video>
             </div>
           </div>
         </div>

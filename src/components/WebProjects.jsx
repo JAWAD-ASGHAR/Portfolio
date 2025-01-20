@@ -48,8 +48,10 @@ const WebProjects = ({ backButton = true }) => {
       tools:
         "Next.js, React, Supabase, Firebase, Moment.js, Tailwind CSS, DaisyUI",
       link: "https://github.com/JAWAD-ASGHAR/Cloud-Box-Storage",
-      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Cloud%20Box%20Project.mp4?t=2024-12-17T12%3A01%3A04.647Z",
-      poster: "/Poster Cloudbox Web.png"
+      video:
+        "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Cloud%20Box%20Project.mp4?t=2024-12-17T12%3A01%3A04.647Z",
+      poster: "/Poster Cloudbox Web.png",
+      localVideo: "/Cloud Box Project.mp4",
     },
     {
       title: "Tik Talk",
@@ -80,8 +82,10 @@ const WebProjects = ({ backButton = true }) => {
       tools:
         "React.js, Zustand, Tailwind CSS, ShadCN, Node.js, Socket.IO, MongoDB",
       link: "https://github.com/JAWAD-ASGHAR/Tik-Talk-Chat-App",
-      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Tik%20Talk%20Project.mp4",
-      poster: "/Poster Tiktalk Web.png"
+      video:
+        "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Tik%20Talk%20Project.mp4",
+      poster: "/Poster Tiktalk Web.png",
+      localVideo: "/Tik Talk Project.mp4",
     },
     {
       title: "NPM Dummy Dump",
@@ -111,8 +115,10 @@ const WebProjects = ({ backButton = true }) => {
   The package demonstrates advanced JavaScript skills, understanding of data generation strategies, and the ability to create developer-friendly tools that solve real-world programming challenges.`,
       tools: "Node.js, NPM Packaging",
       link: "https://www.npmjs.com/package/dummy-dump",
-      video: "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Dummy%20Dump%20Npm.mp4",
-      poster: "/Poster Dummy Dump Web.png"
+      video:
+        "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Dummy%20Dump%20Npm.mp4",
+      poster: "/Poster Dummy Dump Web.png",
+      localVideo: "/Dummy Dump Npm.mp4",
     },
   ];
 
@@ -126,7 +132,7 @@ const WebProjects = ({ backButton = true }) => {
             brought ideas to life with code and creativity.
           </p>
         </div>
-        {backButton && <BackButton onClick={() => navigate('/projects')}/>}
+        {backButton && <BackButton onClick={() => navigate("/projects")} />}
       </div>
       <div className="mt-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -145,7 +151,10 @@ const WebProjects = ({ backButton = true }) => {
                 src={project.video}
                 type="video/mp4"
                 onClick={() => openVideoDialogHandler(project)}
-              />
+              >
+                <source src={project.video}/>
+                <source src={project.localVideo} />
+              </video>
               <div className="mb-4 w-full mt-4 flex justify-between items-center">
                 <h3 className="text-xl font-semibold my-1">{project.title}</h3>
                 <div className="flex items-center space-x-2">
@@ -205,9 +214,11 @@ const WebProjects = ({ backButton = true }) => {
                 muted
                 loop
                 autoPlay
-                src={selectedProject.video}
                 type="video/mp4"
-              />
+              >
+                <source src={selectedProject.video}/>
+                <source src={selectedProject.localVideo} />
+              </video>
             </div>
           </div>
         </div>
