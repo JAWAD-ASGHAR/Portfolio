@@ -114,7 +114,7 @@ const Home = () => {
           {pages.map((link) => (
             <li key={link.id}>
               <Link
-                href={link.href}
+                to={link.href}
                 className="text-white text-xl hover:opacity-80 transition-all"
                 onClick={() => setMenuOpen(false)} // Close menu on link click
               >
