@@ -21,7 +21,7 @@ const WordpressProjects = ({ backButton = true }) => {
 
   const projects = [
     {
-      title: "Otteri AI",
+      title: "Otteri Ai",
       description:
         "An AI-powered Chrome extension plugin landing site with a clean and beautiful design to attract and convert customers.",
       link: "https://otteri.ai/",
@@ -30,7 +30,7 @@ const WordpressProjects = ({ backButton = true }) => {
       localVideo: "/Otteri Wordpress Site.mp4"
     },
     {
-      title: "Treply SO",
+      title: "Treply So",
       description:
         "An SMS marketing SaaS platform landing site with a clean design to effectively convey a clear message to customers.",
       link: "https://treply.so/",
