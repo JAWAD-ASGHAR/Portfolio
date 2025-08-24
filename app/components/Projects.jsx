@@ -36,7 +36,7 @@ const Projects = ({ backButton = true }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white px-8 py-16 md:px-32">
+    <div className="min-h-screen bg-black text-white px-8 py-16 md:px-32 max-w-[90rem] mx-auto">
       <motion.div 
         className="flex justify-between"
         initial={{ opacity: 0, y: 30 }}
