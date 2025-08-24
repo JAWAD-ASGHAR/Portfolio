@@ -1,5 +1,10 @@
 import DesignIllustrations from '../../../components/DesignIllustrations'
+import { AnimatedPage } from '../../../components/AnimationContext'
 
 export default function DesignIllustrationsPage() {
-  return <DesignIllustrations />
+  return (
+    <AnimatedPage>
+      <DesignIllustrations />
+    </AnimatedPage>
+  )
 }

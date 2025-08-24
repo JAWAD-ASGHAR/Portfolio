@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import BackButton from "./BackButton";
 
 const Experience = () => {
@@ -34,36 +35,92 @@ const Experience = () => {
   return (
     <div className="min-h-screen bg-black text-white px-8 py-16 md:px-32">
       {/* Section Heading */}
-      <div className="mb-12 flex justify-between">
-        <div>
-          <h2 className="text-5xl font-bold">My Experience</h2>
-          <p className="text-gray-400 mt-4 text-lg max-w-lg">
+      <motion.div 
+        className="mb-12 flex justify-between"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.h2 
+            className="text-5xl font-bold"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            My Experience
+          </motion.h2>
+          <motion.p 
+            className="text-gray-400 mt-4 text-lg max-w-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             Here are some of my work experiences where I&apos;ve turned challenges
             into accomplishments, making things happen.
-          </p>
-        </div>
-        <BackButton onClick={() => router.push('/')} />
-      </div>
+          </motion.p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <BackButton onClick={() => router.push('/')} />
+        </motion.div>
+      </motion.div>
 
       {/* Experience List */}
-      <div className="space-y-12">
+      <motion.div 
+        className="space-y-12"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
         {experiences.map((item, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 30, x: -20 }}
+            animate={{ opacity: 1, y: 0, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+            whileHover={{ 
+              x: 10,
+              transition: { duration: 0.3 }
+            }}
             className="flex justify-between border-t border-gray-700 pt-8"
           >
             {/* Left Content */}
-            <div>
-              <h3 className="text-2xl font-semibold">{item.company}</h3>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+            >
+              <motion.h3 
+                className="text-2xl font-semibold"
+                whileHover={{ color: "#3B82F6" }}
+                transition={{ duration: 0.3 }}
+              >
+                {item.company}
+              </motion.h3>
               <p className="text-gray-400 mt-2">{item.role}</p>
               <p className="text-gray-300 mt-4 max-w-lg">{item.description}</p>
-            </div>
+            </motion.div>
 
             {/* Duration */}
-            <div className="text-gray-400 text-sm">{item.duration}</div>
-          </div>
+            <motion.div 
+              className="text-gray-400 text-sm"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+            >
+              {item.duration}
+            </motion.div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

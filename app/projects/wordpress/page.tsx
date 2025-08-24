@@ -1,5 +1,10 @@
 import WordpressProjects from '../../components/WordpressProjects'
+import { AnimatedPage } from '../../components/AnimationContext'
 
 export default function WordpressProjectsPage() {
-  return <WordpressProjects />
+  return (
+    <AnimatedPage>
+      <WordpressProjects />
+    </AnimatedPage>
+  )
 }

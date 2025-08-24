@@ -5,6 +5,7 @@ import { FaWordpressSimple } from "react-icons/fa";
 import { IoArrowForward } from "react-icons/io5";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import BackButton from "./BackButton";
 
 const Projects = ({ backButton = true }) => {
@@ -36,38 +37,83 @@ const Projects = ({ backButton = true }) => {
 
   return (
     <div className="min-h-screen bg-black text-white px-8 py-16 md:px-32">
-      <div className="flex justify-between">
-        <div>
-          <h2 className="text-5xl font-bold">My Projects</h2>
-          <p className="text-gray-400 mt-4 text-lg max-w-lg">
+      <motion.div 
+        className="flex justify-between"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.h2 
+            className="text-5xl font-bold"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            My Projects
+          </motion.h2>
+          <motion.p 
+            className="text-gray-400 mt-4 text-lg max-w-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             Here are some of my projects where I&apos;ve turned knowledge into
             expertise, making things happen.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         {backButton === true && (
-          <BackButton onClick={() => router.push('/')}/>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <BackButton onClick={() => router.push('/')}/>
+          </motion.div>
         )}
-      </div>
-      <div className="mt-12">
+      </motion.div>
+      <motion.div 
+        className="mt-12"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {project.map((option, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+              whileHover={{ 
+                y: -10, 
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => router.push(option.link)}
               className="hover:cursor-pointer hover:bg-mainGray/80 transition-all duration-300 ease-in-out bg-mainGray p-6 rounded-lg flex flex-col items-start"
             >
-              <div className="mb-4 w-full flex justify-between">
+              <motion.div 
+                className="mb-4 w-full flex justify-between"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
                 <div>{option.icon}</div>
                 <IoArrowForward />
-              </div>
+              </motion.div>
 
               <h3 className="text-xl font-semibold mb-2">{option.title}</h3>
 
               <p className="text-gray-400 text-sm">{option.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

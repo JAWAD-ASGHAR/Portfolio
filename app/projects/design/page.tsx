@@ -1,5 +1,10 @@
 import DesignProjects from '../../components/DesignProjects'
+import { AnimatedPage } from '../../components/AnimationContext'
 
 export default function DesignProjectsPage() {
-  return <DesignProjects />
+  return (
+    <AnimatedPage>
+      <DesignProjects />
+    </AnimatedPage>
+  )
 }
