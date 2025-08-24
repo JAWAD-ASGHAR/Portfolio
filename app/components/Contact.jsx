@@ -106,9 +106,14 @@ const Contact = () => {
             >
               GitHub
             </a>
-            <s className="text-blue-400 cursor-not-allowed">
-              <div className="text-blue-400">Twitter</div>
-            </s>
+            <a
+              href="https://x.com/jawadasghar86"
+              target="_blank"
+              rel="noreferrer"
+              className="text-blue-400 hover:underline"
+            >
+              X
+            </a>
           </div>
         </motion.div>
 

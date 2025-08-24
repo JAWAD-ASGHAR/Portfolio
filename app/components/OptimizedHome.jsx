@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, memo } from "react";
-import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaXTwitter, FaEnvelope } from "react-icons/fa6";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
@@ -21,7 +21,7 @@ const socials = [
     icon: <FaLinkedin color="black" />,
     text: "LinkedIn",
   },
-  { id: 3, href: "#", icon: <FaTwitter color="black" />, text: "Twitter" },
+  { id: 3, href: "https://x.com/jawadasghar86", icon: <FaXTwitter color="black" />, text: "X" },
   {
     id: 4,
     href: "mailto:connect.jawadasghar@gmail.com",
