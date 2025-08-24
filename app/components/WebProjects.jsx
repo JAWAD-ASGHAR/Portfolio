@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { MdArrowOutward, MdClose, MdInfo } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import Tooltip from "./Tooltip";
 import BackButton from "./BackButton";
 
@@ -126,21 +127,63 @@ const WebProjects = ({ backButton = true }) => {
 
   return (
     <div className="min-h-screen bg-black text-white px-8 py-16 md:px-32">
-      <div className="flex justify-between">
-        <div>
-          <h2 className="text-5xl font-bold">Web Projects</h2>
-          <p className="text-gray-400 mt-4 text-lg max-w-lg">
+      <motion.div 
+        className="flex justify-between"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.h2 
+            className="text-5xl font-bold"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Web Projects
+          </motion.h2>
+          <motion.p 
+            className="text-gray-400 mt-4 text-lg max-w-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             Explore some of my featured web development projects, where I
             brought ideas to life with code and creativity.
-          </p>
-        </div>
-        {backButton && <BackButton onClick={() => router.push("/projects")} />}
-      </div>
-      <div className="mt-12">
+          </motion.p>
+        </motion.div>
+        {backButton && (
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <BackButton onClick={() => router.push("/projects")} />
+          </motion.div>
+        )}
+      </motion.div>
+      <motion.div 
+        className="mt-12"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+              whileHover={{ 
+                y: -10, 
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
               className="bg-cardGray hover:bg-cardHover p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg transition-all duration-300 ease-in-out"
             >
               <video
@@ -180,10 +223,10 @@ const WebProjects = ({ backButton = true }) => {
                 </div>
               </div>
               <p className="text-gray-400 text-sm">{project.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Video Dialog */}
       {openVideoDialog && selectedProject && (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
 import BackButton from "./BackButton";
 import { useRouter } from "next/navigation";
 
@@ -53,18 +54,52 @@ const DesignIllustrations = ({ backButton = true }) => {
   return (
     <>
       <div className="min-h-screen bg-black text-white px-8 py-16 md:px-32">
-        <div className="flex justify-between">
-          <div>
-            <h2 className="text-5xl font-bold">Illustrations</h2>
-            <p className="text-gray-400 mt-4 text-lg max-w-lg">
+        <motion.div 
+          className="flex justify-between"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <motion.h2 
+              className="text-5xl font-bold"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              Illustrations
+            </motion.h2>
+            <motion.p 
+              className="text-gray-400 mt-4 text-lg max-w-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               Creative illustrations that bring concepts to life through
               artistic expression and visual storytelling.
-            </p>
-          </div>
-          {backButton === true && <BackButton onClick={() => router.push('/projects/design')} />}
-        </div>
+            </motion.p>
+          </motion.div>
+          {backButton === true && (
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <BackButton onClick={() => router.push('/projects/design')} />
+            </motion.div>
+          )}
+        </motion.div>
 
-        <div className="columns-1 mt-12 sm:columns-2 lg:columns-3 gap-4">
+        <motion.div 
+          className="columns-1 mt-12 sm:columns-2 lg:columns-3 gap-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
           {!allImagesLoaded ? (
             // Skeleton loader
             <div className="space-y-4">
@@ -93,7 +128,7 @@ const DesignIllustrations = ({ backButton = true }) => {
               </div>
             ))
           )}
-        </div>
+        </motion.div>
       </div>
 
       {/* Modal for viewing selected image */}
