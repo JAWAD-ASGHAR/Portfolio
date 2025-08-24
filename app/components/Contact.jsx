@@ -127,7 +127,7 @@ const Contact = () => {
           <h2 className="text-2xl font-semibold">
             Location
           </h2>
-          <p className="text-gray-400 mt-2">I'm currently based in:</p>
+          <p className="text-gray-400 mt-2">I&apos;m currently based in:</p>
           <p className="text-white my-2">Karachi, Pakistan</p>
           <a
             href="https://www.google.com/maps/place/Karachi,+Karachi+City,+Sindh/@25.1932024,67.1554619,10z/data=!3m1!4b1!4m6!3m5!1s0x3eb33e06651d4bbf:0x9cf92f44555a0c23!8m2!3d24.8607343!4d67.0011364!16zL20vMDRjam4?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D"
