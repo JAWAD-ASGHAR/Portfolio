@@ -106,7 +106,7 @@ const WordpressProjects = ({ backButton = true }) => {
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-              className="bg-cardGray hover:bg-cardHover p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg transition-all duration-300 ease-in-out"
+              className="bg-cardGray hover:bg-cardHover p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg"
             >
               <video
                 className="w-full h-auto cursor-pointer hover:opacity-80 transition-opacity"

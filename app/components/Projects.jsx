@@ -90,7 +90,7 @@ const Projects = ({ backButton = true }) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
               onClick={() => router.push(option.link)}
-              className="hover:cursor-pointer hover:bg-cardHover transition-all duration-300 ease-in-out bg-cardGray p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg"
+              className="hover:cursor-pointer hover:bg-cardHover bg-cardGray p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg"
             >
               <div className="mb-4 w-full flex justify-between">
                 <div>{option.icon}</div>

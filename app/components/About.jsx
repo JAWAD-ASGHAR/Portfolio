@@ -73,7 +73,7 @@ const About = () => {
           </motion.p>
           <motion.button
             onClick={handleResumeClick}
-            className="mt-6 text-white bg-gray-800/0 transition-all duration-300 ease-in-out border border-gray-800 hover:bg-gray-800 py-2 px-4 rounded-md flex items-center"
+            className="mt-6 text-white bg-gray-800/0 border border-gray-800 hover:bg-gray-800 py-2 px-4 rounded-md flex items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
