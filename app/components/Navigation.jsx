@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { IoMenu, IoClose } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 const pages = [
   { id: 1, href: "/about", text: "About" },
@@ -37,7 +37,7 @@ const Navigation = () => {
   return (
     <>
       {/* Mobile Menu Button */}
-      <motion.div 
+     {!menuOpen && <motion.div 
         className="fixed top-5 right-5 md:hidden z-50"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -50,31 +50,9 @@ const Navigation = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <AnimatePresence mode="wait">
-            {menuOpen ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <IoClose size={24} />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="menu"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <IoMenu size={24} />
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <IoMenu size={24} />
         </motion.button>
-      </motion.div>
+      </motion.div>}
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -87,32 +65,11 @@ const Navigation = () => {
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
           >
-            <motion.div 
-              className="flex justify-between items-center p-6 border-b border-gray-700/50 relative z-[9998]"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <h2 className="text-white text-xl font-semibold">Menu</h2>
-              <button
-                onClick={(e) => {
-                  console.log('Close button clicked!'); // Debug log
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setMenuOpen(false);
-                }}
-                className="bg-gray-800/50 text-white hover:bg-gray-700/70 transition-all duration-300 ease-in-out rounded-lg p-2 relative z-[9999] cursor-pointer"
-                type="button"
-                style={{ pointerEvents: 'auto' }}
-              >
-                <IoClose size={20} />
-              </button>
-            </motion.div>
             <motion.ul 
-              className="flex flex-col items-center justify-center h-full gap-8 px-6"
+              className="flex flex-col items-center justify-center h-full gap-8 px-6 pt-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.2 }}
             >
               {pages.map((link, index) => (
                 <motion.li 
