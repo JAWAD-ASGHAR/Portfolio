@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import RoutePreloader from './components/RoutePreloader'
 import PerformanceMonitor from './components/PerformanceMonitor'
-import { AnimationProvider } from './components/AnimationContext'
 import SmoothScroll from './components/SmoothScroll'
 
 const inter = Inter({ 
@@ -25,13 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AnimationProvider>
-          <SmoothScroll>
-            <RoutePreloader />
-            <PerformanceMonitor />
-            {children}
-          </SmoothScroll>
-        </AnimationProvider>
+        <SmoothScroll>
+          <RoutePreloader />
+          <PerformanceMonitor />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   )

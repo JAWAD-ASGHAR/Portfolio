@@ -4,8 +4,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
-import { useAnimation } from "./AnimationContext";
-
 const pages = [
   { id: 1, href: "/about", text: "About" },
   { id: 2, href: "/projects", text: "Projects" },
@@ -17,7 +15,6 @@ const pages = [
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
-  const { setIsTransitioning } = useAnimation();
 
   // Close menu if clicking outside
   useEffect(() => {
@@ -34,10 +31,7 @@ const Navigation = () => {
   }, []);
 
   const handleLinkClick = (href) => {
-    setIsTransitioning(true);
     setMenuOpen(false);
-    // Reset transition state after navigation
-    setTimeout(() => setIsTransitioning(false), 600);
   };
 
   return (
