@@ -89,23 +89,13 @@ const Projects = ({ backButton = true }) => {
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-              whileHover={{ 
-                y: -10, 
-                scale: 1.02,
-                transition: { duration: 0.3 }
-              }}
-              whileTap={{ scale: 0.98 }}
               onClick={() => router.push(option.link)}
               className="hover:cursor-pointer hover:bg-cardHover transition-all duration-300 ease-in-out bg-cardGray p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg"
             >
-              <motion.div 
-                className="mb-4 w-full flex justify-between"
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
-              >
+              <div className="mb-4 w-full flex justify-between">
                 <div>{option.icon}</div>
                 <IoArrowForward />
-              </motion.div>
+              </div>
 
               <h3 className="text-xl font-semibold mb-2">{option.title}</h3>
 

@@ -86,10 +86,6 @@ const Experience = () => {
             initial={{ opacity: 0, y: 30, x: -20 }}
             animate={{ opacity: 1, y: 0, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-            whileHover={{ 
-              x: 10,
-              transition: { duration: 0.3 }
-            }}
             className="flex justify-between border-t border-gray-700 pt-8"
           >
             {/* Left Content */}
@@ -98,13 +94,9 @@ const Experience = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
             >
-              <motion.h3 
-                className="text-2xl font-semibold"
-                whileHover={{ color: "#3B82F6" }}
-                transition={{ duration: 0.3 }}
-              >
+              <h3 className="text-2xl font-semibold">
                 {item.company}
-              </motion.h3>
+              </h3>
               <p className="text-gray-400 mt-2">{item.role}</p>
               <p className="text-gray-300 mt-4 max-w-lg">{item.description}</p>
             </motion.div>

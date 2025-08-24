@@ -63,24 +63,17 @@ const Contact = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          whileHover={{ x: 10 }}
         >
-          <motion.h2 
-            className="text-2xl font-semibold"
-            whileHover={{ color: "#3B82F6" }}
-            transition={{ duration: 0.3 }}
-          >
+          <h2 className="text-2xl font-semibold">
             Email
-          </motion.h2>
+          </h2>
           <p className="text-gray-400 mt-2">Drop me an email anytime.</p>
-          <motion.a
+          <a
             href="mailto:connect.jawadasghar@gmail.com"
             className="text-blue-400 mt-4 inline-block hover:underline"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             connect.jawadasghar@gmail.com
-          </motion.a>
+          </a>
         </motion.div>
 
         {/* Social Links Section */}
@@ -89,39 +82,30 @@ const Contact = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          whileHover={{ x: 10 }}
         >
-          <motion.h2 
-            className="text-2xl font-semibold"
-            whileHover={{ color: "#3B82F6" }}
-            transition={{ duration: 0.3 }}
-          >
+          <h2 className="text-2xl font-semibold">
             Social Links
-          </motion.h2>
+          </h2>
           <p className="text-gray-400 mt-2">
             You can also find me on the following platforms:
           </p>
           <div className="flex flex-col md:flex-row md:gap-6 mt-4">
-            <motion.a
+            <a
               href="https://www.linkedin.com/in/jawad-a-dev/"
               target="_blank"
               rel="noreferrer"
               className="text-blue-400 hover:underline"
-              whileHover={{ scale: 1.05, x: 5 }}
-              whileTap={{ scale: 0.95 }}
             >
               LinkedIn
-            </motion.a>
-            <motion.a
+            </a>
+            <a
               href="https://github.com/JAWAD-ASGHAR"
               target="_blank"
               rel="noreferrer"
               className="text-blue-400 hover:underline"
-              whileHover={{ scale: 1.05, x: 5 }}
-              whileTap={{ scale: 0.95 }}
             >
               GitHub
-            </motion.a>
+            </a>
             <s className="text-blue-400 cursor-not-allowed">
               <div className="text-blue-400">Twitter</div>
             </s>
@@ -134,27 +118,20 @@ const Contact = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          whileHover={{ x: 10 }}
         >
-          <motion.h2 
-            className="text-2xl font-semibold"
-            whileHover={{ color: "#3B82F6" }}
-            transition={{ duration: 0.3 }}
-          >
+          <h2 className="text-2xl font-semibold">
             Location
-          </motion.h2>
+          </h2>
           <p className="text-gray-400 mt-2">I'm currently based in:</p>
           <p className="text-white my-2">Karachi, Pakistan</p>
-          <motion.a
+          <a
             href="https://www.google.com/maps/place/Karachi,+Karachi+City,+Sindh/@25.1932024,67.1554619,10z/data=!3m1!4b1!4m6!3m5!1s0x3eb33e06651d4bbf:0x9cf92f44555a0c23!8m2!3d24.8607343!4d67.0011364!16zL20vMDRjam4?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D"
             target="_blank"
             rel="noreferrer"
             className="text-blue-400 hover:underline"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             View
-          </motion.a>
+          </a>
         </motion.div>
       </motion.div>
     </div>

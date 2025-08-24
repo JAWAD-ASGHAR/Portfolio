@@ -90,30 +90,19 @@ const Skills = ({ backButton = true, fullPage = true }) => {
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                whileHover={{ 
-                  y: -10, 
-                  scale: 1.02,
-                  transition: { duration: 0.3 }
-                }}
                 className="bg-cardGray hover:bg-cardHover p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg"
               >
-                <motion.div 
-                  className="mb-4 w-full flex justify-between"
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                >
+                <div className="mb-4 w-full flex justify-between">
                   <div>{skill.icon}</div>
                   <Tooltip text="View Projects" position="top">
-                    <motion.div
+                    <div
                       onClick={() => router.push(skill.link)}
                       className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
                     >
                       <MdArrowOutward />
-                    </motion.div>
+                    </div>
                   </Tooltip>
-                </motion.div>
+                </div>
   
                 <h3 className="text-xl font-semibold mb-2">{skill.title}</h3>
   
