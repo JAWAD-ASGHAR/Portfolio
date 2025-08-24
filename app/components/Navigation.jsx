@@ -79,10 +79,9 @@ const Navigation = () => {
       <div className="fixed top-20 right-12 hidden md:block z-40">
         <ul className="flex flex-col gap-1">
           {pages.map((link) => (
-            <Link href={link.href} prefetch={true}>
+            <Link href={link.href} prefetch={true} key={link.id}>
               <li
                 className="hover:cursor-pointer text-white text-lg hover:opacity-80 hover:translate-x-1 duration-300 transition-all ease-in-out"
-                key={link.id}
               >
                 {link.text}
               </li>

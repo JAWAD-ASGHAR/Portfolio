@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import BackButton from "./BackButton";
 import { useRouter } from "next/navigation";
 
@@ -10,7 +10,7 @@ const DesignIllustrations = ({ backButton = true }) => {
   const [selectedProject, setSelectedProject] = useState(null);
   const router = useRouter();
 
-  const projects = [
+  const projects = useMemo(() => [
     { image: "/Card design.webp" },
     { image: "/about us groewpng.webp" },
     { image: "/Card Stack.webp" },
@@ -24,7 +24,7 @@ const DesignIllustrations = ({ backButton = true }) => {
     { image: "/Our Story.webp" },
     { image: "/Shedules.webp" },
     { image: "/Purple Mobile.webp" },
-  ];
+  ], []);
 
   useEffect(() => {
     const imagePromises = projects.map(
