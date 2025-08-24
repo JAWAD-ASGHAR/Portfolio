@@ -267,7 +267,7 @@ const WebProjects = ({ backButton = true }) => {
                 <h3 className="text-xl font-semibold mb-2">
                   Technical Details
                 </h3>
-                <div className="bg-black/20 p-4 rounded-lg text-gray-300 whitespace-pre-wrap">
+                <div className="bg-cardGray/50 p-4 rounded-lg text-gray-300 whitespace-pre-wrap border border-gray-700/30">
                   {selectedProject.fullDescription
                     .split("\n\n")
                     .map((paragraph, index) => (
