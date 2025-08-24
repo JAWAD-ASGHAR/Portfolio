@@ -3,6 +3,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
+import { useAnimation } from "./AnimationContext";
 
 const pages = [
   { id: 1, href: "/about", text: "About" },
@@ -15,6 +17,7 @@ const pages = [
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const { setIsTransitioning } = useAnimation();
 
   // Close menu if clicking outside
   useEffect(() => {
@@ -30,65 +33,139 @@ const Navigation = () => {
     };
   }, []);
 
+  const handleLinkClick = (href) => {
+    setIsTransitioning(true);
+    setMenuOpen(false);
+    // Reset transition state after navigation
+    setTimeout(() => setIsTransitioning(false), 600);
+  };
+
   return (
     <>
       {/* Mobile Menu Button */}
-      <div className="fixed top-5 right-5 md:hidden z-50">
-        <button
+      <motion.div 
+        className="fixed top-5 right-5 md:hidden z-50"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        <motion.button
           onClick={() => setMenuOpen(!menuOpen)}
           className="text-white hover:opacity-80 transition-all duration-300 ease-in-out"
           aria-label="Toggle menu"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
-          {menuOpen ? <IoClose size={30} /> : <IoMenu size={30} />}
-        </button>
-      </div>
+          <AnimatePresence mode="wait">
+            {menuOpen ? (
+              <motion.div
+                key="close"
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <IoClose size={30} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="menu"
+                initial={{ rotate: 90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <IoMenu size={30} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.button>
+      </motion.div>
 
       {/* Mobile Menu */}
-      <div
-        ref={menuRef}
-        className={`fixed top-0 right-0 h-screen bg-gray-900/95 w-2/3 z-40 transform transition-transform duration-300 ease-in-out ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        } md:hidden`}
-      >
-        <div className="flex justify-between items-center p-4">
-          <h2 className="text-white text-xl">Menu</h2>
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="text-white hover:opacity-80 transition-all duration-300 ease-in-out"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            ref={menuRef}
+            className="fixed top-0 right-0 h-screen bg-gray-900/95 w-2/3 z-40 md:hidden"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
           >
-            <IoClose size={30} />
-          </button>
-        </div>
-        <ul className="flex flex-col items-center justify-center h-full gap-6">
-          {pages.map((link) => (
-            <li key={link.id}>
-              <Link
-                href={link.href}
-                className="text-white text-xl hover:opacity-80 transition-all duration-300"
+            <motion.div 
+              className="flex justify-between items-center p-4"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <h2 className="text-white text-xl">Menu</h2>
+              <motion.button
                 onClick={() => setMenuOpen(false)}
-                prefetch={true}
+                className="text-white hover:opacity-80 transition-all duration-300 ease-in-out"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {link.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+                <IoClose size={30} />
+              </motion.button>
+            </motion.div>
+            <motion.ul 
+              className="flex flex-col items-center justify-center h-full gap-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              {pages.map((link, index) => (
+                <motion.li 
+                  key={link.id}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                >
+                  <Link
+                    href={link.href}
+                    className="text-white text-xl hover:opacity-80 transition-all duration-300"
+                    onClick={() => handleLinkClick(link.href)}
+                    prefetch={true}
+                  >
+                    {link.text}
+                  </Link>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Desktop Navigation */}
-      <div className="fixed top-20 right-12 hidden md:block z-40">
+      <motion.div 
+        className="fixed top-20 right-12 hidden md:block z-40"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <ul className="flex flex-col gap-1">
-          {pages.map((link) => (
-            <Link href={link.href} prefetch={true} key={link.id}>
-              <li
-                className="hover:cursor-pointer text-white text-lg hover:opacity-80 hover:translate-x-1 duration-300 transition-all ease-in-out"
-              >
-                {link.text}
-              </li>
-            </Link>
+          {pages.map((link, index) => (
+            <motion.li
+              key={link.id}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 + index * 0.1 }}
+            >
+              <Link href={link.href} prefetch={true}>
+                <motion.div
+                  className="hover:cursor-pointer text-white text-lg hover:opacity-80 duration-300 transition-all ease-in-out"
+                  whileHover={{ x: 5, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => handleLinkClick(link.href)}
+                >
+                  {link.text}
+                </motion.div>
+              </Link>
+            </motion.li>
           ))}
         </ul>
-      </div>
+      </motion.div>
     </>
   );
 };
