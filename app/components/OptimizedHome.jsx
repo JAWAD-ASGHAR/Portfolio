@@ -39,7 +39,7 @@ const SocialIcons = memo(({ socials, isMobile = false }) => {
   if (isMobile) {
     return (
       <motion.div 
-        className="fixed bottom-5 left-1/2 transform -translate-x-1/2 md:hidden"
+        className="fixed bottom-5 left-0 right-0 md:hidden flex justify-center"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
@@ -145,7 +145,7 @@ const OptimizedHome = () => {
 
         {/* Resume Button for Mobile */}
         <motion.div 
-          className="absolute top-48 left-1/2 transform -translate-x-1/2 md:hidden"
+          className="pt-16 flex flex-col items-center md:hidden"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
