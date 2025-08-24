@@ -45,9 +45,9 @@ const Navigation = () => {
       >
         <motion.button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-white hover:opacity-80 transition-all duration-300 ease-in-out"
+          className="bg-gray-900/80 backdrop-blur-sm text-white hover:bg-gray-800/90 transition-all duration-300 ease-in-out rounded-lg p-2 border border-gray-700/50"
           aria-label="Toggle menu"
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           <AnimatePresence mode="wait">
@@ -59,7 +59,7 @@ const Navigation = () => {
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <IoClose size={30} />
+                <IoClose size={24} />
               </motion.div>
             ) : (
               <motion.div
@@ -69,7 +69,7 @@ const Navigation = () => {
                 exit={{ rotate: -90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <IoMenu size={30} />
+                <IoMenu size={24} />
               </motion.div>
             )}
           </AnimatePresence>
@@ -81,30 +81,35 @@ const Navigation = () => {
         {menuOpen && (
           <motion.div
             ref={menuRef}
-            className="fixed top-0 right-0 h-screen bg-gray-900/95 w-2/3 z-40 md:hidden"
+            className="fixed top-0 right-0 h-screen bg-gray-900/95 backdrop-blur-md w-2/3 z-40 md:hidden border-l border-gray-700/50"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
           >
             <motion.div 
-              className="flex justify-between items-center p-4"
+              className="flex justify-between items-center p-6 border-b border-gray-700/50 relative z-[9998]"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <h2 className="text-white text-xl">Menu</h2>
-              <motion.button
-                onClick={() => setMenuOpen(false)}
-                className="text-white hover:opacity-80 transition-all duration-300 ease-in-out"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+              <h2 className="text-white text-xl font-semibold">Menu</h2>
+              <button
+                onClick={(e) => {
+                  console.log('Close button clicked!'); // Debug log
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setMenuOpen(false);
+                }}
+                className="bg-gray-800/50 text-white hover:bg-gray-700/70 transition-all duration-300 ease-in-out rounded-lg p-2 relative z-[9999] cursor-pointer"
+                type="button"
+                style={{ pointerEvents: 'auto' }}
               >
-                <IoClose size={30} />
-              </motion.button>
+                <IoClose size={20} />
+              </button>
             </motion.div>
             <motion.ul 
-              className="flex flex-col items-center justify-center h-full gap-6"
+              className="flex flex-col items-center justify-center h-full gap-8 px-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
@@ -115,10 +120,11 @@ const Navigation = () => {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 + index * 0.1 }}
+                  className="w-full"
                 >
                   <Link
                     href={link.href}
-                    className="text-white text-xl hover:opacity-80 transition-all duration-300"
+                    className="text-white text-xl hover:text-blue-400 transition-all duration-300 block text-center py-3 px-4 rounded-lg hover:bg-gray-800/50"
                     onClick={() => handleLinkClick(link.href)}
                     prefetch={true}
                   >
