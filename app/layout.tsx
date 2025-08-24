@@ -14,6 +14,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Jawad Asghar - Designer / Developer',
   description: 'Portfolio of Jawad Asghar, a designer and developer',
+  icons: {
+    icon: '/Favicon.png',
+    shortcut: '/Favicon.png',
+    apple: '/Favicon.png',
+  },
 }
 
 export default function RootLayout({
