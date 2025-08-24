@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { MdArrowOutward, MdClose, MdInfo } from "react-icons/md";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Tooltip from "./Tooltip";
 import BackButton from "./BackButton";
 
@@ -127,7 +127,7 @@ const WebProjects = ({ backButton = true }) => {
 
   return (
     <div className="min-h-screen bg-black text-white px-8 py-16 md:px-32">
-      <motion.div 
+      <motion.div
         className="flex justify-between"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ const WebProjects = ({ backButton = true }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-5xl font-bold"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ const WebProjects = ({ backButton = true }) => {
           >
             Web Projects
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-gray-400 mt-4 text-lg max-w-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -166,7 +166,7 @@ const WebProjects = ({ backButton = true }) => {
           </motion.div>
         )}
       </motion.div>
-      <motion.div 
+      <motion.div
         className="mt-12"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -191,19 +191,14 @@ const WebProjects = ({ backButton = true }) => {
                 type="video/mp4"
                 onClick={() => openVideoDialogHandler(project)}
               >
-                <source src={project.video}/>
+                <source src={project.video} />
                 <source src={project.localVideo} />
               </video>
               <div className="mb-4 w-full mt-4 flex justify-between items-center">
                 <h3 className="text-xl font-semibold my-1">{project.title}</h3>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-3">
                   <Tooltip text="View Details" position="top">
-                    <button
-                      onClick={() => openDetailsDialogHandler(project)}
-                      className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
-                    >
-                      <MdInfo />
-                    </button>
+                    <MdInfo onClick={() => openDetailsDialogHandler(project)} size={26} className="cursor-pointer text-gray-400 transition-all duration-300 ease-in-out hover:text-white" />
                   </Tooltip>
                   <Tooltip text="View Project" position="top">
                     <a
@@ -224,15 +219,24 @@ const WebProjects = ({ backButton = true }) => {
       </motion.div>
 
       {/* Video Dialog */}
-      {openVideoDialog && selectedProject && (
-        <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-          onClick={closeDialogHandler}
-        >
-          <div
-            className="relative w-[90%] md:w-[600px] rounded-lg overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {openVideoDialog && selectedProject && (
+          <motion.div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+            onClick={closeDialogHandler}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           >
+            <motion.div
+              className="relative w-[90%] md:w-[600px] rounded-lg overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
             <button
               onClick={closeDialogHandler}
               className="absolute top-3 right-3 text-white text-2xl hover:text-gray-400 transition-all z-10"
@@ -255,24 +259,35 @@ const WebProjects = ({ backButton = true }) => {
                 autoPlay
                 type="video/mp4"
               >
-                <source src={selectedProject.video}/>
+                <source src={selectedProject.video} />
                 <source src={selectedProject.localVideo} />
               </video>
             </div>
-          </div>
-        </div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
 
       {/* Details Dialog */}
-      {openDetailsDialog && selectedProject && (
-        <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-          onClick={closeDialogHandler}
-        >
-          <div
-            className="relative w-[90%] md:w-[800px] max-h-[80vh] bg-cardGray rounded-lg overflow-hidden flex flex-col border border-gray-700/30 shadow-xl"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {openDetailsDialog && selectedProject && (
+          <motion.div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+            onClick={closeDialogHandler}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           >
+            <motion.div
+              className="relative w-[90%] md:w-[800px] max-h-[80vh] bg-cardGray rounded-lg overflow-hidden flex flex-col border border-gray-700/30 shadow-xl"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
             <div className="bg-cardGray border-b border-b-gray-700 p-4 flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">
                 {selectedProject.title}
@@ -322,9 +337,10 @@ const WebProjects = ({ backButton = true }) => {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

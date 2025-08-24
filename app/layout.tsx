@@ -12,7 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Jawad Asghar - Designer / Developer',
+  title: 'Jawad Asghar - Portfolio',
   description: 'Portfolio of Jawad Asghar, a designer and developer',
   icons: {
     icon: '/Favicon.png',
