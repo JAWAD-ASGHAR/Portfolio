@@ -52,7 +52,7 @@ const DesignProjects = ({ backButton = true }) => {
             <div
               key={index}
               onClick={() => router.push(option.link)}
-              className="hover:cursor-pointer hover:bg-mainGray/80 transition-all duration-300 ease-in-out bg-mainGray p-6 rounded-lg flex flex-col items-start"
+              className="hover:cursor-pointer hover:bg-cardHover transition-all duration-300 ease-in-out bg-cardGray p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg"
             >
               <div className="mb-4 w-full flex justify-between">
                 <div>{option.icon}</div>

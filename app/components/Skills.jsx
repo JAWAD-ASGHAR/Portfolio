@@ -95,7 +95,7 @@ const Skills = ({ backButton = true, fullPage = true }) => {
                   scale: 1.02,
                   transition: { duration: 0.3 }
                 }}
-                className="bg-mainGray p-6 rounded-lg flex flex-col items-start"
+                className="bg-cardGray hover:bg-cardHover p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg"
               >
                 <motion.div 
                   className="mb-4 w-full flex justify-between"

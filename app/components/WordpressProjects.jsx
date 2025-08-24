@@ -68,7 +68,7 @@ const WordpressProjects = ({ backButton = true }) => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-mainGray p-6 rounded-lg flex flex-col items-start"
+              className="bg-cardGray hover:bg-cardHover p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg transition-all duration-300 ease-in-out"
             >
               <video
                 className="w-full h-auto cursor-pointer hover:opacity-80 transition-opacity"

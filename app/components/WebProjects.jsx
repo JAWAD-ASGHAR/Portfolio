@@ -141,7 +141,7 @@ const WebProjects = ({ backButton = true }) => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-mainGray p-6 rounded-lg flex flex-col items-start"
+              className="bg-cardGray hover:bg-cardHover p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg transition-all duration-300 ease-in-out"
             >
               <video
                 className="w-full h-auto cursor-pointer hover:opacity-80 transition-opacity"
@@ -232,10 +232,10 @@ const WebProjects = ({ backButton = true }) => {
           onClick={closeDialogHandler}
         >
           <div
-            className="relative w-[90%] md:w-[800px] max-h-[80vh] bg-mainGray rounded-lg overflow-hidden flex flex-col"
+            className="relative w-[90%] md:w-[800px] max-h-[80vh] bg-cardGray rounded-lg overflow-hidden flex flex-col border border-gray-700/30 shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-mainGray border-b border-b-gray-800 p-4 flex justify-between items-center">
+            <div className="bg-cardGray border-b border-b-gray-700 p-4 flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">
                 {selectedProject.title}
               </h2>

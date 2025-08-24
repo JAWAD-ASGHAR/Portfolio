@@ -71,7 +71,7 @@ const DesignIllustrations = ({ backButton = true }) => {
               {projects.map((_, index) => (
                 <div
                   key={index}
-                  className="w-full h-48 bg-gray-800 animate-pulse rounded-lg"
+                  className="w-full h-48 bg-cardGray animate-pulse rounded-lg border border-gray-700/30"
                 ></div>
               ))}
             </div>
@@ -80,7 +80,7 @@ const DesignIllustrations = ({ backButton = true }) => {
             projects.map((project, index) => (
               <div
                 key={index}
-                className="relative group hover:opacity-85 duration-300 ease-in-out transition-all mb-4 overflow-hidden rounded-lg shadow-lg break-inside-avoid"
+                className="relative group hover:opacity-85 duration-300 ease-in-out transition-all mb-4 overflow-hidden rounded-lg shadow-lg break-inside-avoid bg-cardGray border border-gray-700/30"
                 style={{ pageBreakInside: "avoid" }}
               >
                 <img
