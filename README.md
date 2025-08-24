@@ -1,50 +1,79 @@
-# React + TypeScript + Vite
+# Jawad Asghar Portfolio - Next.js Version
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Next.js version of my portfolio website showcasing my work as a designer and developer.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Modern Next.js 14 with App Router
+- Responsive design with Tailwind CSS
+- Portfolio sections: About, Experience, Skills, Projects
+- Project categories: Web, Design, WordPress
+- Design subcategories: Logos, Illustrations, UI
+- Mobile-friendly navigation
+- Social media links
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js 18+ 
+- npm or yarn
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Build for Production
+
+```bash
+npm run build
+npm start
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Project Structure
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+app/
+├── components/          # React components
+├── about/              # About page
+├── experience/         # Experience page
+├── contact/            # Contact page
+├── skills/             # Skills page
+├── projects/           # Projects pages
+│   ├── web/           # Web projects
+│   ├── design/        # Design projects
+│   │   ├── logos/     # Logo designs
+│   │   ├── illustrations/ # Illustrations
+│   │   └── ui/        # UI designs
+│   └── wordpress/     # WordPress projects
+├── globals.css         # Global styles
+├── layout.tsx          # Root layout
+└── page.tsx            # Home page
+```
+
+## Technologies Used
+
+- Next.js 14
+- React 18
+- TypeScript
+- Tailwind CSS
+- React Icons
+
+## Deployment
+
+This project can be deployed to Vercel, Netlify, or any other platform that supports Next.js.
+
+## License
+
+This project is private and for personal use.
