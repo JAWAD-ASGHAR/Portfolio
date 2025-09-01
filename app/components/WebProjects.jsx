@@ -60,6 +60,7 @@ const WebProjects = ({ backButton = true }) => {
       video: "https://www.youtube.com/watch?v=iwfvXQmtdBk",
       poster: "/Otteri App Project.png",
       localVideo: "/Otteri App Project.mp4",
+      forSale: true,
     },
     {
       title: "Treply So",
@@ -91,6 +92,7 @@ const WebProjects = ({ backButton = true }) => {
       video: "https://www.youtube.com/watch?v=1XgOGaXfMmo",
       poster: "/Treply App Project.png",
       localVideo: "/Treply App Project.mp4",
+      forSale: true,
     },
     {
       title: "Snap Photo",
@@ -116,32 +118,31 @@ const WebProjects = ({ backButton = true }) => {
     Each image generation costs just 1 credit—with 150 credits allocated for fine-tuning your model
     
     Snap.photo is built for anyone who wants to **elevate their image, boost their presence, and save time—all with AI-powered ease.**`,
-      tools:
-        "React.js, Tailwind CSS, Node.js, Supabase, Stripe",
+      tools: "React.js, Tailwind CSS, Node.js, Supabase, Stripe",
       link: "https://snap.photo/",
-      video:
-        "https://www.youtube.com/watch?v=fXSuZcNBiUQ",
+      video: "https://www.youtube.com/watch?v=fXSuZcNBiUQ",
       poster: "/Snap Photo App.png",
       localVideo: "/Snap Photo App.mp4",
+      forSale: true,
     },
     {
       title: "Cloud Box",
       description:
         "A comprehensive cloud storage solution to provide users with a seamless, secure, and responsive file management experience.",
       fullDescription: `Cloud Storage App represents a cutting-edge cloud storage platform built using modern web technologies. By leveraging Next.js, React, and cloud services like Supabase and Firebase, the application delivers a powerful solution for personal and professional file storage needs.
-  
-  Key Technological Highlights:
-  - Frontend Framework: Next.js and React for dynamic, high-performance application
-  - Authentication: Secure user login with NextAuth
-  - Database & Storage: Integrated Supabase and Firebase for real-time data sync
-  - Styling: Responsive design with Tailwind CSS and DaisyUI
-  - Date Handling: Precise management using Moment.js
-  
-  Core Functionalities:
-  - Secure user registration and authentication
-  - Intuitive file upload, download, and management
-  - Real-time data synchronization across devices
-  - Responsive design for desktop and mobile platforms`,
+
+Key Technological Highlights:
+- Frontend Framework: Next.js and React for dynamic, high-performance application
+- Authentication: Secure user login with NextAuth
+- Database & Storage: Integrated Supabase and Firebase for real-time data sync
+- Styling: Responsive design with Tailwind CSS and DaisyUI
+- Date Handling: Precise management using Moment.js
+
+Core Functionalities:
+- Secure user registration and authentication
+- Intuitive file upload, download, and management
+- Real-time data synchronization across devices
+- Responsive design for desktop and mobile platforms`,
       tools:
         "Next.js, React, Supabase, Firebase, Moment.js, Tailwind CSS, DaisyUI",
       link: "https://github.com/JAWAD-ASGHAR/Cloud-Box-Storage",
@@ -149,33 +150,34 @@ const WebProjects = ({ backButton = true }) => {
         "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Cloud%20Box%20Project.mp4?t=2024-12-17T12%3A01%3A04.647Z",
       poster: "/Poster Cloudbox Web.png",
       localVideo: "/Cloud Box Project.mp4",
+      forSale: false,
     },
     {
       title: "Tik Talk",
       description:
         "A modern real-time communication platform showcasing advanced full-stack development and real-time messaging capabilities.",
       fullDescription: `Tik Talk is a cutting-edge real-time chat application that demonstrates the power of modern web technologies in creating seamless communication experiences.
-  
-  Technical Architecture:
-  - Frontend: React.js with responsive UI
-  - State Management: Zustand for efficient state handling
-  - Styling: Tailwind CSS and ShadCN for adaptive design
-  - Backend: Node.js with robust API architecture
-  - Real-Time Communication: Socket.IO for instant messaging
-  - Database: MongoDB for scalable data storage
-  
-  Key Technical Highlights:
-  - Real-time, bidirectional communication with Socket.IO
-  - Responsive, mobile-friendly user interface
-  - Scalable backend development
-  - Elegant state management
-  - Secure and interactive communication platform
-  
-  Core Functionalities:
-  - Instant, real-time messaging
-  - User authentication and profile management
-  - Cross-device responsive design
-  - Efficient and smooth state management`,
+
+Technical Architecture:
+- Frontend: React.js with responsive UI
+- State Management: Zustand for efficient state handling
+- Styling: Tailwind CSS and ShadCN for adaptive design
+- Backend: Node.js with robust API architecture
+- Real-Time Communication: Socket.IO for instant messaging
+- Database: MongoDB for scalable data storage
+
+Key Technical Highlights:
+- Real-time, bidirectional communication with Socket.IO
+- Responsive, mobile-friendly user interface
+- Scalable backend development
+- Elegant state management
+- Secure and interactive communication platform
+
+Core Functionalities:
+- Instant, real-time messaging
+- User authentication and profile management
+- Cross-device responsive design
+- Efficient and smooth state management`,
       tools:
         "React.js, Zustand, Tailwind CSS, ShadCN, Node.js, Socket.IO, MongoDB",
       link: "https://github.com/JAWAD-ASGHAR/Tik-Talk-Chat-App",
@@ -183,39 +185,41 @@ const WebProjects = ({ backButton = true }) => {
         "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Tik%20Talk%20Project.mp4",
       poster: "/Poster Tiktalk Web.png",
       localVideo: "/Tik Talk Project.mp4",
+      forSale: false,
     },
     {
       title: "NPM Dummy Dump",
       description:
         "A versatile Node.js utility package for generating comprehensive dummy data, streamlining development and testing processes.",
       fullDescription: `Dummy Dump is a robust Node.js package developed to solve a critical challenge in software development and testing: the need for quick, realistic, and easily generated dummy data.
-  
-  Technical Overview:
-  - Core Technology: Node.js-based utility package
-  - Primary Purpose: Automated generation of realistic dummy data
-  - Key Features:
-    - Multiple data type generators (users, orders, products)
-    - Highly customizable and extensible
-    - Easy integration with existing Node.js projects
-  
-  Key Innovations:
-  - Flexible system generating complex, contextually appropriate dummy data
-  - Modular functions allowing granular or comprehensive data generation
-  - Robust data generation logic with multiple customization options
-  
-  Key Functionalities:
-  - Generate complete user profiles with realistic personal information
-  - Create mock order and product datasets
-  - Provide granular data generation methods
-  - Support rapid prototyping and testing scenarios
-  
-  The package demonstrates advanced JavaScript skills, understanding of data generation strategies, and the ability to create developer-friendly tools that solve real-world programming challenges.`,
+
+Technical Overview:
+- Core Technology: Node.js-based utility package
+- Primary Purpose: Automated generation of realistic dummy data
+- Key Features:
+  - Multiple data type generators (users, orders, products)
+  - Highly customizable and extensible
+  - Easy integration with existing Node.js projects
+
+Key Innovations:
+- Flexible system generating complex, contextually appropriate dummy data
+- Modular functions allowing granular or comprehensive data generation
+- Robust data generation logic with multiple customization options
+
+Key Functionalities:
+- Generate complete user profiles with realistic personal information
+- Create mock order and product datasets
+- Provide granular data generation methods
+- Support rapid prototyping and testing scenarios
+
+The package demonstrates advanced JavaScript skills, understanding of data generation strategies, and the ability to create developer-friendly tools that solve real-world programming challenges.`,
       tools: "Node.js, NPM Packaging",
       link: "https://www.npmjs.com/package/dummy-dump",
       video:
         "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Dummy%20Dump%20Npm.mp4",
       poster: "/Poster Dummy Dump Web.png",
       localVideo: "/Dummy Dump Npm.mp4",
+      forSale: false,
     },
   ];
 
@@ -275,19 +279,26 @@ const WebProjects = ({ backButton = true }) => {
               transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
               className="bg-cardGray hover:bg-cardHover p-6 rounded-lg flex flex-col items-start border border-gray-700/30 shadow-lg"
             >
-              <video
-                className="w-full h-auto cursor-pointer hover:opacity-80 transition-opacity"
-                playsInline
-                muted
-                loop
-                autoPlay
-                poster={project.poster}
-                type="video/mp4"
-                onClick={() => openVideoDialogHandler(project)}
-              >
-                <source src={project.video} />
-                <source src={project.localVideo} />
-              </video>
+              <div className="relative">
+                <video
+                  className="w-full h-auto cursor-pointer hover:opacity-80 transition-opacity"
+                  playsInline
+                  muted
+                  loop
+                  autoPlay
+                  poster={project.poster}
+                  type="video/mp4"
+                  onClick={() => openVideoDialogHandler(project)}
+                >
+                  <source src={project.video} />
+                  <source src={project.localVideo} />
+                </video>
+                {project.forSale && (
+                  <div onClick={() => router.push("/contact")} className="cursor-pointer absolute top-3 right-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                    FOR SALE
+                  </div>
+                )}
+              </div>
               <div className="mb-4 w-full mt-4 flex justify-between items-center">
                 <h3 className="text-xl font-semibold my-1">{project.title}</h3>
                 <div className="flex items-center space-x-3">
