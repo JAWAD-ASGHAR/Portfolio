@@ -143,7 +143,7 @@ const DesignIllustrations = ({ backButton = true }) => {
           >
             <button
               onClick={closeDialogHandler}
-              className="absolute top-3 text-gray-600 right-3 text-2xl hover:text-gray-400 transition-all z-10"
+              className="absolute top-3 right-3 text-white text-lg hover:text-gray-400 transition-all z-10 bg-black/50 rounded-full w-8 h-8 flex items-center justify-center"
             >
               &times;
             </button>
