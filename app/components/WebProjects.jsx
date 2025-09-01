@@ -62,30 +62,35 @@ const WebProjects = ({ backButton = true }) => {
       localVideo: "/Otteri App Project.mp4",
     },
     {
-      title: "Cloud Box",
+      title: "Treply So",
       description:
-        "A comprehensive full-stack cloud storage solution designed to provide users with a seamless, secure, and responsive file management experience.",
-      fullDescription: `Cloud Storage App represents a cutting-edge cloud storage platform built using modern web technologies. By leveraging Next.js, React, and cloud services like Supabase and Firebase, the application delivers a powerful solution for personal and professional file storage needs.
-  
-  Key Technological Highlights:
-  - Frontend Framework: Next.js and React for dynamic, high-performance application
-  - Authentication: Secure user login with NextAuth
-  - Database & Storage: Integrated Supabase and Firebase for real-time data sync
-  - Styling: Responsive design with Tailwind CSS and DaisyUI
-  - Date Handling: Precise management using Moment.js
-  
-  Core Functionalities:
-  - Secure user registration and authentication
-  - Intuitive file upload, download, and management
-  - Real-time data synchronization across devices
-  - Responsive design for desktop and mobile platforms`,
+        "SMS Marketing and reply assistant using Twilio that helps professionals with campaigns, surveys and automation effortlessly.",
+
+      fullDescription: `Treply is an intelligent communication tool designed to streamline how users respond across email, social platforms, and customer interactions. By combining the power of modern AI models with a simple, responsive interface, Treply ensures that every reply is fast, professional, and context-aware.
+    
+    Key Technological Highlights:
+    - Frontend: React.js with responsive, modern UI
+    - Styling: Tailwind CSS for clean, adaptive design
+    - AI Integration: Multiple advanced language models for smart, personalized responses
+    - Backend: Node.js with secure APIs for reliable request handling
+    - State Management: Redux Toolkit for lightweight and efficient state handling
+    - Database: MongoDB for scalable storage and user data management
+    
+    Core Functionalities:
+    - Twilio integration for SMS marketing, surveys and automation
+    - Tone adjustment (casual, formal, persuasive, etc.)
+    - Multi-platform support to manage campaigns in one place
+    - Secure authentication and profile management
+    - Real-time generation for fast, fluid responses
+    - Responsive design for use on any device
+    
+    Treply is built for creators, professionals, and teams who want to **communicate smarter, save time, and maintain a consistent voice across platforms.**`,
       tools:
-        "Next.js, React, Supabase, Firebase, Moment.js, Tailwind CSS, DaisyUI",
-      link: "https://github.com/JAWAD-ASGHAR/Cloud-Box-Storage",
-      video:
-        "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Cloud%20Box%20Project.mp4?t=2024-12-17T12%3A01%3A04.647Z",
-      poster: "/Poster Cloudbox Web.png",
-      localVideo: "/Cloud Box Project.mp4",
+        "React, Node.js, Twilio, Javascript, Go Lang, Stripe, Tailwind CSS, Redux Toolkit, Socket.IO, MongoDB",
+      link: "https://treply.so/",
+      video: "https://www.youtube.com/watch?v=1XgOGaXfMmo",
+      poster: "/Treply App Project.png",
+      localVideo: "/Treply App Project.mp4",
     },
     {
       title: "Snap Photo",
@@ -120,6 +125,32 @@ const WebProjects = ({ backButton = true }) => {
       localVideo: "/Snap Photo App.png.mp4",
     },
     {
+      title: "Cloud Box",
+      description:
+        "A comprehensive cloud storage solution to provide users with a seamless, secure, and responsive file management experience.",
+      fullDescription: `Cloud Storage App represents a cutting-edge cloud storage platform built using modern web technologies. By leveraging Next.js, React, and cloud services like Supabase and Firebase, the application delivers a powerful solution for personal and professional file storage needs.
+  
+  Key Technological Highlights:
+  - Frontend Framework: Next.js and React for dynamic, high-performance application
+  - Authentication: Secure user login with NextAuth
+  - Database & Storage: Integrated Supabase and Firebase for real-time data sync
+  - Styling: Responsive design with Tailwind CSS and DaisyUI
+  - Date Handling: Precise management using Moment.js
+  
+  Core Functionalities:
+  - Secure user registration and authentication
+  - Intuitive file upload, download, and management
+  - Real-time data synchronization across devices
+  - Responsive design for desktop and mobile platforms`,
+      tools:
+        "Next.js, React, Supabase, Firebase, Moment.js, Tailwind CSS, DaisyUI",
+      link: "https://github.com/JAWAD-ASGHAR/Cloud-Box-Storage",
+      video:
+        "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Cloud%20Box%20Project.mp4?t=2024-12-17T12%3A01%3A04.647Z",
+      poster: "/Poster Cloudbox Web.png",
+      localVideo: "/Cloud Box Project.mp4",
+    },
+    {
       title: "Tik Talk",
       description:
         "A modern real-time communication platform showcasing advanced full-stack development and real-time messaging capabilities.",
@@ -152,37 +183,6 @@ const WebProjects = ({ backButton = true }) => {
         "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Tik%20Talk%20Project.mp4",
       poster: "/Poster Tiktalk Web.png",
       localVideo: "/Tik Talk Project.mp4",
-    },
-    {
-      title: "Treply SO",
-      description:
-        "SMS Marketing and reply assistant using Twilio that helps professionals with campaigns, surveys and automation effortlessly.",
-
-      fullDescription: `Treply is an intelligent communication tool designed to streamline how users respond across email, social platforms, and customer interactions. By combining the power of modern AI models with a simple, responsive interface, Treply ensures that every reply is fast, professional, and context-aware.
-    
-    Key Technological Highlights:
-    - Frontend: React.js with responsive, modern UI
-    - Styling: Tailwind CSS for clean, adaptive design
-    - AI Integration: Multiple advanced language models for smart, personalized responses
-    - Backend: Node.js with secure APIs for reliable request handling
-    - State Management: Redux Toolkit for lightweight and efficient state handling
-    - Database: MongoDB for scalable storage and user data management
-    
-    Core Functionalities:
-    - Twilio integration for SMS marketing, surveys and automation
-    - Tone adjustment (casual, formal, persuasive, etc.)
-    - Multi-platform support to manage campaigns in one place
-    - Secure authentication and profile management
-    - Real-time generation for fast, fluid responses
-    - Responsive design for use on any device
-    
-    Treply is built for creators, professionals, and teams who want to **communicate smarter, save time, and maintain a consistent voice across platforms.**`,
-      tools:
-        "React, Node.js, Twilio, Javascript, Go Lang, Stripe, Tailwind CSS, Redux Toolkit, Socket.IO, MongoDB",
-      link: "https://treply.so/",
-      video: "https://www.youtube.com/watch?v=1XgOGaXfMmo",
-      poster: "/Treply App Project.png",
-      localVideo: "/Treply App Project.mp4",
     },
     {
       title: "NPM Dummy Dump",
