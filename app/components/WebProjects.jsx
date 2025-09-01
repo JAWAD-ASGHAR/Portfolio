@@ -31,6 +31,37 @@ const WebProjects = ({ backButton = true }) => {
 
   const projects = [
     {
+      title: "Otteri AI",
+      description:
+        "An all-in-one AI workspace that brings text, image, video, audio, and mind-mapping tools together under one seamless platform.",
+
+      fullDescription: `Otteri.ai is a powerful AI platform designed to centralize the best of modern AI into a single, intuitive workspace. Built with Next.js and React, it enables users to create, explore, and innovate without needing multiple subscriptions or fragmented tools. 
+    
+    Key Technological Highlights:
+    - Frontend Framework: Next.js and React for fast, dynamic user experience
+    - Authentication: Secure user login and account management
+    - AI Integrations: Access to multiple state-of-the-art AI models (GPT, Claude, LLaMA, image, video, audio, and music generators)
+    - Visualization: Interactive mind maps powered by ReactFlow
+    - Design: Clean, responsive UI built with Tailwind CSS
+    
+    Core Functionalities:
+    - Chat with multiple AI models in one place
+    - Generate and refine text content with advanced prompts
+    - Create stunning images, videos, and audio using top AI engines
+    - Build and expand mind maps for brainstorming and workflows
+    - Summarize and interact with PDFs and other documents
+    - Explore a prompt library and build custom AI bots
+    - Team collaboration features with enterprise compliance options
+    
+    Otteri.ai is designed for creators, teams, and businesses who want **one subscription, one workspace, and endless AI possibilities.**`,
+      tools:
+        "Next.js, TypeScript, React, Supabase, Chakra UI, ReactFlow, Tanstack Router, Redux Toolkit",
+      link: "https://www.otteri.ai",
+      video: "https://www.youtube.com/watch?v=iwfvXQmtdBk",
+      poster: "/Otteri App Project.png",
+      localVideo: "/Otteri App Project.mp4",
+    },
+    {
       title: "Cloud Box",
       description:
         "A comprehensive full-stack cloud storage solution designed to provide users with a seamless, secure, and responsive file management experience.",
@@ -198,7 +229,11 @@ const WebProjects = ({ backButton = true }) => {
                 <h3 className="text-xl font-semibold my-1">{project.title}</h3>
                 <div className="flex items-center space-x-3">
                   <Tooltip text="View Details" position="top">
-                    <MdInfo onClick={() => openDetailsDialogHandler(project)} size={26} className="cursor-pointer text-gray-400 transition-all duration-300 ease-in-out hover:text-white" />
+                    <MdInfo
+                      onClick={() => openDetailsDialogHandler(project)}
+                      size={26}
+                      className="cursor-pointer text-gray-400 transition-all duration-300 ease-in-out hover:text-white"
+                    />
                   </Tooltip>
                   <Tooltip text="View Project" position="top">
                     <a
@@ -237,37 +272,37 @@ const WebProjects = ({ backButton = true }) => {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-            <button
-              onClick={closeDialogHandler}
-              className="absolute top-3 right-3 text-white text-2xl hover:text-gray-400 transition-all z-10"
-            >
-              &times;
-            </button>
-
-            <div
-              className="w-full h-auto flex items-center justify-center"
-              style={{
-                background: "linear-gradient(90deg, #FF7A5C, #FF5CD9, #5372FF)",
-              }}
-            >
-              <video
-                className="w-full h-auto"
-                playsInline
-                controls
-                muted
-                loop
-                autoPlay
-                type="video/mp4"
+              <button
+                onClick={closeDialogHandler}
+                className="absolute top-3 right-3 text-white text-2xl hover:text-gray-400 transition-all z-10"
               >
-                <source src={selectedProject.video} />
-                <source src={selectedProject.localVideo} />
-              </video>
-            </div>
+                &times;
+              </button>
+
+              <div
+                className="w-full h-auto flex items-center justify-center"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FF7A5C, #FF5CD9, #5372FF)",
+                }}
+              >
+                <video
+                  className="w-full h-auto"
+                  playsInline
+                  controls
+                  muted
+                  loop
+                  autoPlay
+                  type="video/mp4"
+                >
+                  <source src={selectedProject.video} />
+                  <source src={selectedProject.localVideo} />
+                </video>
+              </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-
 
       {/* Details Dialog */}
       <AnimatePresence>
@@ -288,55 +323,57 @@ const WebProjects = ({ backButton = true }) => {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-            <div className="bg-cardGray border-b border-b-gray-700 p-4 flex justify-between items-center">
-              <h2 className="text-2xl font-bold text-white">
-                {selectedProject.title}
-              </h2>
-              <div className="flex gap-4">
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
-                >
-                  <MdArrowOutward />
-                </a>
-                <div
-                  onClick={closeDialogHandler}
-                  className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
-                >
-                  <MdClose />
-                </div>
-              </div>
-            </div>
-
-            <div className="p-6 overflow-y-auto">
-              <div className="mb-4">
-                <h3 className="text-xl font-semibold mb-2">Project Overview</h3>
-                <p className="text-gray-300">{selectedProject.description}</p>
-              </div>
-
-              <div className="mb-4">
-                <h3 className="text-xl font-semibold mb-2">
-                  Technical Details
-                </h3>
-                <div className="bg-cardGray/50 p-4 rounded-lg text-gray-300 whitespace-pre-wrap border border-gray-700/30">
-                  {selectedProject.fullDescription
-                    .split("\n\n")
-                    .map((paragraph, index) => (
-                      <p key={index} className="mb-2">
-                        {paragraph}
-                      </p>
-                    ))}
+              <div className="bg-cardGray border-b border-b-gray-700 p-4 flex justify-between items-center">
+                <h2 className="text-2xl font-bold text-white">
+                  {selectedProject.title}
+                </h2>
+                <div className="flex gap-4">
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
+                  >
+                    <MdArrowOutward />
+                  </a>
+                  <div
+                    onClick={closeDialogHandler}
+                    className="flex items-center justify-center cursor-pointer hover:bg-gray-800 transition-all duration-300 ease-in-out border border-gray-700 rounded-full w-8 h-8"
+                  >
+                    <MdClose />
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-4 flex justify-start items-center">
-                <span className="text-sm text-gray-400">
-                  Tools: {selectedProject.tools}
-                </span>
+              <div className="p-6 overflow-y-auto">
+                <div className="mb-4">
+                  <h3 className="text-xl font-semibold mb-2">
+                    Project Overview
+                  </h3>
+                  <p className="text-gray-300">{selectedProject.description}</p>
+                </div>
+
+                <div className="mb-4">
+                  <h3 className="text-xl font-semibold mb-2">
+                    Technical Details
+                  </h3>
+                  <div className="bg-cardGray/50 p-4 rounded-lg text-gray-300 whitespace-pre-wrap border border-gray-700/30">
+                    {selectedProject.fullDescription
+                      .split("\n\n")
+                      .map((paragraph, index) => (
+                        <p key={index} className="mb-2">
+                          {paragraph}
+                        </p>
+                      ))}
+                  </div>
+                </div>
+
+                <div className="mt-4 flex justify-start items-center">
+                  <span className="text-sm text-gray-400">
+                    Tools: {selectedProject.tools}
+                  </span>
+                </div>
               </div>
-            </div>
             </motion.div>
           </motion.div>
         )}
