@@ -90,7 +90,7 @@ const WebProjects = ({ backButton = true }) => {
     {
       title: "Snap Photo",
       description:
-        "Transform your selfies into professional-grade headshots in minutes with AI, no studio needed.",
+        "Transform your selfies into professional grade headshots in minutes with AI, no studio needed. Affordable and accessible for everyone.",
 
       fullDescription: `Snap.photo is your on-demand AI photography studio—turning ordinary selfies into polished, studio-quality headshots in just a few clicks. Whether for LinkedIn, team branding, or social profiles, get stunning, customizable results without the high cost or hassle of traditional photoshoots.
     
