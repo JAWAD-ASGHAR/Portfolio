@@ -121,8 +121,8 @@ const WebProjects = ({ backButton = true }) => {
       link: "https://snap.photo/",
       video:
         "https://www.youtube.com/watch?v=fXSuZcNBiUQ",
-      poster: "/Snap Photo App.png.png",
-      localVideo: "/Snap Photo App.png.mp4",
+      poster: "/Snap Photo App.png",
+      localVideo: "/Snap Photo App.mp4",
     },
     {
       title: "Cloud Box",
