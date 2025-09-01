@@ -124,29 +124,29 @@ const WebProjects = ({ backButton = true }) => {
     {
       title: "Treply SO",
       description:
-      "AI-powered reply assistant that helps professionals, creators, and businesses craft smart, personalized responses effortlessly.",
+      "SMS Marketing and reply assistant using Twilio that helps professionals with campaigns, surveys and automation effortlessly.",
     
     fullDescription: `Treply is an intelligent communication tool designed to streamline how users respond across email, social platforms, and customer interactions. By combining the power of modern AI models with a simple, responsive interface, Treply ensures that every reply is fast, professional, and context-aware.
     
     Key Technological Highlights:
     - Frontend: React.js with responsive, modern UI
-    - Styling: Tailwind CSS and ShadCN for clean, adaptive design
+    - Styling: Tailwind CSS for clean, adaptive design
     - AI Integration: Multiple advanced language models for smart, personalized responses
     - Backend: Node.js with secure APIs for reliable request handling
-    - State Management: Zustand for lightweight and efficient state handling
+    - State Management: Redux Toolkit for lightweight and efficient state handling
     - Database: MongoDB for scalable storage and user data management
     
     Core Functionalities:
-    - AI-generated smart replies for emails, social media, and messaging
+    - Twilio integration for SMS marketing, surveys and automation
     - Tone adjustment (casual, formal, persuasive, etc.)
-    - Multi-platform support to manage conversations in one place
+    - Multi-platform support to manage campaigns in one place
     - Secure authentication and profile management
     - Real-time generation for fast, fluid responses
-    - Responsive, mobile-first design for use on any device
+    - Responsive design for use on any device
     
     Treply is built for creators, professionals, and teams who want to **communicate smarter, save time, and maintain a consistent voice across platforms.**`,    
       tools:
-        "React, Node.js, Javascript, Go Lang, Tailwind CSS, Redux Toolkit, Socket.IO, MongoDB",
+        "React, Node.js, Twilio, Javascript, Go Lang, Tailwind CSS, Redux Toolkit, Socket.IO, MongoDB",
       link: "https://treply.so/",
       video: "https://www.youtube.com/watch?v=1XgOGaXfMmo",
       poster: "/Treply App Project.png",
