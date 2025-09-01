@@ -55,7 +55,7 @@ const WebProjects = ({ backButton = true }) => {
     
     Otteri.ai is designed for creators, teams, and businesses who want **one subscription, one workspace, and endless AI possibilities.**`,
       tools:
-        "Next.js, TypeScript, React, Supabase, Chakra UI, ReactFlow, Tanstack Router, Redux Toolkit",
+        "Next.js, TypeScript, React, Supabase, Stripe, Chakra UI, ReactFlow, Tanstack Router, Redux Toolkit",
       link: "https://www.otteri.ai",
       video: "https://www.youtube.com/watch?v=iwfvXQmtdBk",
       poster: "/Otteri App Project.png",
@@ -86,6 +86,38 @@ const WebProjects = ({ backButton = true }) => {
         "https://ijskvyyvlqmbxhopukvj.supabase.co/storage/v1/object/public/Portfolio%20Videos/Cloud%20Box%20Project.mp4?t=2024-12-17T12%3A01%3A04.647Z",
       poster: "/Poster Cloudbox Web.png",
       localVideo: "/Cloud Box Project.mp4",
+    },
+    {
+      title: "Snap Photo",
+      description:
+        "Transform your selfies into professional-grade headshots in minutes with AI, no studio needed.",
+
+      fullDescription: `Snap.photo is your on-demand AI photography studio—turning ordinary selfies into polished, studio-quality headshots in just a few clicks. Whether for LinkedIn, team branding, or social profiles, get stunning, customizable results without the high cost or hassle of traditional photoshoots.
+    
+    Key Attraction Highlights:
+    - Rapid AI-powered model creation: Upload 5–10 selfies and receive instant feedback while a personalized digital model is generated in 2–3 minutes
+    - High-volume output: Generate over 100 professional headshots in varied styles, settings, and outfits
+    - Tailored for professionals: Perfectly composed and lit headshots optimized for resumes, social media, and branding
+    
+    Why Snap.photo Stands Out:
+    - Fast, affordable, and accessible—studio-grade results for a fraction of the cost
+    - No scheduling, travel, or photographer required
+    - Trusted by professionals, executives, teams, and photographers alike
+    
+    Pricing at a Glance:
+    - **Basic – $29**: 290 credits
+    - **Professional – $39**: 390 credits (most popular)
+    - **Executive – $59**: 590 credits  
+    Each image generation costs just 1 credit—with 150 credits allocated for fine-tuning your model
+    
+    Snap.photo is built for anyone who wants to **elevate their image, boost their presence, and save time—all with AI-powered ease.**`,
+      tools:
+        "React.js, Tailwind CSS, Node.js, Supabase, Stripe",
+      link: "https://snap.photo/",
+      video:
+        "https://www.youtube.com/watch?v=fXSuZcNBiUQ",
+      poster: "/Snap Photo App.png.png",
+      localVideo: "/Snap Photo App.png.mp4",
     },
     {
       title: "Tik Talk",
@@ -124,9 +156,9 @@ const WebProjects = ({ backButton = true }) => {
     {
       title: "Treply SO",
       description:
-      "SMS Marketing and reply assistant using Twilio that helps professionals with campaigns, surveys and automation effortlessly.",
-    
-    fullDescription: `Treply is an intelligent communication tool designed to streamline how users respond across email, social platforms, and customer interactions. By combining the power of modern AI models with a simple, responsive interface, Treply ensures that every reply is fast, professional, and context-aware.
+        "SMS Marketing and reply assistant using Twilio that helps professionals with campaigns, surveys and automation effortlessly.",
+
+      fullDescription: `Treply is an intelligent communication tool designed to streamline how users respond across email, social platforms, and customer interactions. By combining the power of modern AI models with a simple, responsive interface, Treply ensures that every reply is fast, professional, and context-aware.
     
     Key Technological Highlights:
     - Frontend: React.js with responsive, modern UI
@@ -144,9 +176,9 @@ const WebProjects = ({ backButton = true }) => {
     - Real-time generation for fast, fluid responses
     - Responsive design for use on any device
     
-    Treply is built for creators, professionals, and teams who want to **communicate smarter, save time, and maintain a consistent voice across platforms.**`,    
+    Treply is built for creators, professionals, and teams who want to **communicate smarter, save time, and maintain a consistent voice across platforms.**`,
       tools:
-        "React, Node.js, Twilio, Javascript, Go Lang, Tailwind CSS, Redux Toolkit, Socket.IO, MongoDB",
+        "React, Node.js, Twilio, Javascript, Go Lang, Stripe, Tailwind CSS, Redux Toolkit, Socket.IO, MongoDB",
       link: "https://treply.so/",
       video: "https://www.youtube.com/watch?v=1XgOGaXfMmo",
       poster: "/Treply App Project.png",
