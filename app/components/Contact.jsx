@@ -107,7 +107,7 @@ const Contact = () => {
               GitHub
             </a>
             <a
-              href="https://x.com/jawadasghar86"
+              href="https://x.com/jawad_a_dev"
               target="_blank"
               rel="noreferrer"
               className="text-blue-400 hover:underline"

@@ -21,7 +21,7 @@ const socials = [
     icon: <FaLinkedin color="black" />,
     text: "LinkedIn",
   },
-  { id: 3, href: "https://x.com/jawadasghar86", icon: <FaXTwitter color="black" />, text: "X" },
+  { id: 3, href: "https://x.com/jawad_a_dev", icon: <FaXTwitter color="black" />, text: "X" },
   {
     id: 4,
     href: "mailto:connect.jawadasghar@gmail.com",
